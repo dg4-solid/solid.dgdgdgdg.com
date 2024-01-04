@@ -1,1 +1,121 @@
 header
+  width: 100%
+  display: flex
+
+  .outside
+    width: 100%
+    position: fixed
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    z-index: 1000
+
+    @include tab
+      padding-left: 12px
+
+    .logo
+      width: 150px
+      height: auto
+
+      @include tab
+        width: 120px
+
+    .burger
+      width: 90px
+      height: 90px
+
+      display: grid
+      place-items: center
+
+      @include tab
+        width: 65px
+        height: 65px
+
+      &:hover
+        background-color: $red
+
+        rect:nth-of-type(1)
+          y: 6px
+          @include tab
+            y: 4px
+
+        rect:nth-of-type(2)
+          visibility: hidden
+          opacity: 0
+
+        rect:nth-of-type(3)
+          y: 18px
+          @include tab
+            y: 12px
+
+      .line
+        width: 35px
+        height: 27px
+
+        display: flex
+
+        position: relative
+
+        @include sp
+          width: 30px
+          height: 19px
+
+      rect
+        width: 100%
+        height: 3px
+
+        position: absolute
+
+        fill: $white
+        transition: all 0.2s
+
+        &:nth-of-type(1)
+          y: 0
+
+          &.is-open
+            y: 12px
+            @include tab
+              y: 8px
+
+        &:nth-of-type(2)
+          visibility: visible
+          opacity: 1
+          y: 12px
+          @include tab
+            y: 8px
+
+          &.is-open
+            visibility: hidden
+            opacity: 0
+
+        &:nth-of-type(3)
+          y: 24px
+          @include tab
+            y: 16px
+
+          &.is-open
+            y: 12px
+            @include tab
+              y: 8px
+
+  .inside
+    position: fixed
+    width: 100%
+    height: 100vh
+    z-index: -999
+
+    top: -100vh
+
+    padding-top: 90px
+
+    background-color: $black
+
+    transition: all 0.5s
+
+    &.is-open
+      z-index: 999
+
+      top: 0
+
+      transition: all 0.5s

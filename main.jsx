@@ -2,7 +2,7 @@ function App() {
   return (
     <div>
       <Header />
-      Hello React!
+      <main>This is main.</main>
       <Footer />
     </div>
   );
