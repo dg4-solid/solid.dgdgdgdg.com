@@ -21,12 +21,15 @@
   src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
 }
 * {
-  background-color: #141414;
   color: #EBE6DD;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 1.6;
+}
+
+body {
+  background-color: #141414;
 }
 
 .container {
@@ -38,4 +41,146 @@
     width: 100%;
     padding: 0 10px;
   }
+}
+
+header {
+  width: 100%;
+  display: flex;
+}
+header .outside {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+@media (max-width: 1024px) {
+  header .outside {
+    padding-left: 12px;
+  }
+}
+header .outside .logo {
+  width: 150px;
+  height: auto;
+}
+@media (max-width: 1024px) {
+  header .outside .logo {
+    width: 120px;
+  }
+}
+header .outside .burger {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 1024px) {
+  header .outside .burger {
+    width: 65px;
+    height: 65px;
+  }
+}
+header .outside .burger:hover {
+  background-color: #D40000;
+}
+header .outside .burger:hover rect:nth-of-type(1) {
+  y: 6px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger:hover rect:nth-of-type(1) {
+    y: 4px;
+  }
+}
+header .outside .burger:hover rect:nth-of-type(2) {
+  visibility: hidden;
+  opacity: 0;
+}
+header .outside .burger:hover rect:nth-of-type(3) {
+  y: 18px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger:hover rect:nth-of-type(3) {
+    y: 12px;
+  }
+}
+header .outside .burger .line {
+  width: 35px;
+  height: 27px;
+  display: flex;
+  position: relative;
+}
+@media (max-width: 640px) {
+  header .outside .burger .line {
+    width: 30px;
+    height: 19px;
+  }
+}
+header .outside .burger rect {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  fill: #EBE6DD;
+  transition: all 0.2s;
+}
+header .outside .burger rect:nth-of-type(1) {
+  y: 0;
+}
+header .outside .burger rect:nth-of-type(1).is-open {
+  y: 12px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger rect:nth-of-type(1).is-open {
+    y: 8px;
+  }
+}
+header .outside .burger rect:nth-of-type(2) {
+  visibility: visible;
+  opacity: 1;
+  y: 12px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger rect:nth-of-type(2) {
+    y: 8px;
+  }
+}
+header .outside .burger rect:nth-of-type(2).is-open {
+  visibility: hidden;
+  opacity: 0;
+}
+header .outside .burger rect:nth-of-type(3) {
+  y: 24px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger rect:nth-of-type(3) {
+    y: 16px;
+  }
+}
+header .outside .burger rect:nth-of-type(3).is-open {
+  y: 12px;
+}
+@media (max-width: 1024px) {
+  header .outside .burger rect:nth-of-type(3).is-open {
+    y: 8px;
+  }
+}
+header .inside {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -999;
+  top: -100vh;
+  padding-top: 90px;
+  background-color: #141414;
+  transition: all 0.5s;
+}
+header .inside.is-open {
+  z-index: 999;
+  top: 0;
+  transition: all 0.5s;
+}
+
+main {
+  padding-top: 90px;
+  min-height: 100vh;
 }
