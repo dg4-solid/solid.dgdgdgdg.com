@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Zen Kaku Gothic New";
+  weight: normal;
+  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+}
+@font-face {
+  font-family: "Zen Kaku Gothic New";
+  weight: bold;
+  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap");
+}
+@font-face {
+  font-family: "Monaspace Krypton Var";
+  weight: normal;
+  font-variations-settings: "wght" 500;
+  src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
+}
+@font-face {
+  font-family: "Monaspace Krypton Var";
+  weight: light;
+  font-variations-settings: "wght" 300;
+  src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
+}
+* {
+  background-color: #141414;
+  color: #EBE6DD;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  width: 660px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

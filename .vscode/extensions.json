@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "glenn2223.live-sass",
+    "htmlhint.vscode-htmlhint",
+    "mhutchie.git-graph",
+    "ritwickdey.liveserver",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented"
+  ]
+}
