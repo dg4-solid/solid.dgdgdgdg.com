@@ -168,10 +168,9 @@ header .inside {
   position: fixed;
   width: 100%;
   height: 100vh;
-  z-index: -999;
   top: -100vh;
   padding-top: 90px;
-  background-color: #141414;
+  background-color: #0A0A0A;
   transition: all 0.5s;
 }
 header .inside.is-open {
