@@ -1,12 +1,13 @@
 function App() {
   return (
-    <div>
+    <main>
       <Header />
-      <main>This is main.</main>
+      <div id="fact">This is page</div>
       <Footer />
-    </div>
+    </main>
   );
 }
 
-const target = document.querySelector("#app");
-ReactDOM.render(<App />, target);
+const target = document.getElementById("app");
+const root = ReactDOM.createRoot(target);
+root.render(<App />);
