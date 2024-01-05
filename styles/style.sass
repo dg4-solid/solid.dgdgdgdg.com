@@ -69,13 +69,31 @@
 
       margin-top: 56px
 
+      @include sp
+        flex-direction: column
+        gap: 40px
+        padding: 0 32px
+        margin-top: 48px
+
       .item
         width: 300px
+        @include sp
+          width: 100%
+
         img
           display: block
+          width: 200px
+          height: 200px
           margin: 0 auto
+          @include sp
+            width: 128px
+            height: 128px
+
         .caption
           margin-top: 32px
+          @include sp
+            text-align: center
+            margin-top: 16px
 
 #project
   h2.title
@@ -83,10 +101,19 @@
     font-weight: normal
     font-size: 64px
     text-align: center
+    @include sp
+      font-size: 32px
+
   .items-wrapper
     display: flex
     justify-content: space-between
     margin-top: 56px
+    @include sp
+      width: fit-content
+      flex-direction: column
+      gap: 56px
+      margin: 0 auto
+      margin-top: 40px
 
     .item
       width: 256px
