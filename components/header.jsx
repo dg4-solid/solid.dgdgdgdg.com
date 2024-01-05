@@ -2,10 +2,16 @@ function Header() {
   const [openMenu, setOpenMenu] = React.useState(false);
   const menuFunction = () => setOpenMenu(!openMenu);
   const menuReset = () => setOpenMenu(false);
-  // let openState = openMenu ? "is-open" : "";
+  let openState = openMenu ? "is-open" : "";
 
-  // 開いた状態のテスト
-  let openState = "is-open";
+  // メニューが開いている時はスクロールを禁止する
+  React.useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [openMenu]);
 
   return (
     <header>
@@ -25,7 +31,26 @@ function Header() {
         </div>
       </div>
 
-      <div className={`inside ${openState}`}>inside</div>
+      <div className={`inside ${openState}`}>
+        <nav>
+          <a href="#about" onClick={() => menuReset()}>
+            About
+          </a>
+          <a href="#project" onClick={() => menuReset()}>
+            Project
+          </a>
+          <a href="mailto:solid@dgdgdgdg.com" onClick={() => menuReset()}>
+            Contact
+          </a>
+        </nav>
+
+        <div className="bottom">
+          <p className="copyright">&copy; dgdgdgdg Solid Point 2024</p>
+          <a href="https://www.dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
+            dgdgdgdg
+          </a>
+        </div>
+      </div>
     </header>
   );
 }
