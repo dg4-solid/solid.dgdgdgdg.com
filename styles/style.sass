@@ -6,7 +6,7 @@
 @import "components/header"
 @import "components/footer"
 
-.firstview
+#firstview
   width: fit-content
 
   position: relative
@@ -53,3 +53,67 @@
 
     @include sp
       font-size: 32px
+
+#about
+  .overview .text
+    text-align: center
+    margin-top: 32px
+
+  .meaning
+    .note
+      text-align: center
+
+    .items-wrapper
+      display: flex
+      justify-content: space-between
+
+      margin-top: 56px
+
+      .item
+        width: 300px
+        img
+          display: block
+          margin: 0 auto
+        .caption
+          margin-top: 32px
+
+#project
+  h2.title
+    font-family: "Monaspace Krypton Var"
+    font-weight: normal
+    font-size: 64px
+    text-align: center
+  .items-wrapper
+    display: flex
+    justify-content: space-between
+    margin-top: 56px
+
+    .item
+      width: 256px
+      .cover-image
+        width: 100%
+        aspect-ratio: 1 / 1
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-color: $black-darker
+
+      h3.genre
+        font-family: "Zen Black"
+        margin-top: 24px
+      .description
+        margin-top: 8px
+        a
+          text-decoration: underline
+          transition: all 0.2s
+          &:hover
+            color: $red
+            transition: all 0.2s
+
+    #etrt
+      .cover-image
+        background-image: url("/public/images/etrt.png")
+
+    #soon
+      .description
+        color: $red

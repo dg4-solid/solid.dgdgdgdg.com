@@ -1,12 +1,10 @@
 @font-face
-  font-family: "Zen Kaku Gothic New"
-  weight: normal
-  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap")
+  font-family: "Zen Medium"
+  src: url("/public/fonts/ZenKakuGothicNew-Medium.ttf")
 
 @font-face
-  font-family: "Zen Kaku Gothic New"
-  weight: bold
-  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap")
+  font-family: "Zen Black"
+  src: url("/public/fonts/ZenKakuGothicNew-Black.ttf")
 
 @font-face
   font-family: "Monaspace Krypton Var"
@@ -23,10 +21,18 @@
 *
   color: $white
 
-  font-family: "Zen Kaku Gothic New", sans-serif
-  font-weight: normal
+  font-family: "Zen Medium", sans-serif
   font-size: 16px
   line-height: 1.6
+
+  scroll-behavior: smooth
+  scroll-padding-top: 200px
+
+  @include tab
+    scroll-padding-top: 120px
+
+  @include sp
+    scroll-padding-top: 80px
 
 body
   background-color: $black
@@ -34,8 +40,11 @@ body
 // container
 .container
   width: 660px
+  max-width: 660px
   margin: 0 auto
+  margin-top: 296px
 
   @include tab
     width: 100%
     padding: 0 10px
+    margin-top: 200px
