@@ -1,1 +1,204 @@
 header
+  width: 100%
+  display: flex
+
+  .outside
+    width: 100%
+    position: fixed
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    top: 0
+
+    padding-left: 24px
+
+    z-index: 1000
+
+    @include sp
+      padding-left: 12px
+
+    .logo
+      width: 200px
+      height: 57px
+
+      mask-image: url("/public/images/logotype.svg")
+      mask-repeat: no-repeat
+      mask-position: center
+
+      background-color: $white
+
+      transition: all 0.2s
+
+      @include sp
+        width: 150px
+        height: 43px
+
+      &:hover
+        background-color: $red
+        transition: all 0.2s
+
+    nav
+      opacity: 1
+      transition: all 0.3s
+
+      margin-left: auto
+
+      @include sp
+        display: none
+
+      &.is-open
+        opacity: 0
+        transition: all 0.3s
+
+      *
+        font-family: "Monaspace Krypton Var"
+        font-weight: lighter
+
+      a
+        color: $white
+        transition: all 0.2s
+
+        padding: 16px
+
+        &:hover
+          color: $red
+          transition: all 0.2s
+
+    .burger
+      width: $header-height-pc
+      height: $header-height-pc
+
+      display: grid
+      place-items: center
+
+      @include sp
+        width: $header-height-sp
+        height: $header-height-sp
+
+      &:hover rect
+        fill: $red
+
+      .line
+        width: 35px
+        height: 27px
+
+        display: flex
+
+        position: relative
+
+        @include sp
+          width: 24px
+          height: 21px
+
+      rect
+        width: 100%
+        height: 3px
+
+        position: absolute
+
+        fill: $white
+        transition: all 0.2s
+
+        &:nth-of-type(1)
+          y: 0
+
+        &:nth-of-type(2)
+          visibility: visible
+          opacity: 1
+          y: 12px
+          @include sp
+            y: 8px
+
+          &.is-open
+            visibility: hidden
+            opacity: 0
+
+        &:nth-of-type(3)
+          y: 24px
+          @include sp
+            y: 16px
+
+        &:nth-of-type(1), &:nth-of-type(3)
+          &.is-open
+            y: 12px
+            @include sp
+              y: 8px
+
+  .inside
+    position: fixed
+    width: 100%
+    height: 100vh
+    top: -100vh
+    padding-top: $header-height-pc
+    background-color: $black-darker
+
+    z-index: 999
+
+    transition: all 0.5s
+
+    @include sp
+      padding-top: $header-height-sp
+
+    &.is-open
+      top: 0
+      transition: all 0.5s
+
+    nav
+      height: 100%
+
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 32px
+
+      transform: translateY(-112px)
+
+      @include sp
+        gap: 16px
+        transform: translateY(-160px)
+
+      *
+        font-family: "Monaspace Krypton Var"
+        font-weight: normal
+        font-size: 64px
+
+        @include sp
+          font-size: 40px
+
+      a
+        color: $white
+        transition: all 0.2s
+
+        &:hover
+          color: $red
+          transition: all 0.2s
+
+    .bottom
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      position: absolute
+      bottom: 40px
+      width: 100%
+
+      padding: 0 7vw
+
+      @include sp
+        flex-direction: column-reverse
+        gap: 16px
+        padding: 0 2.5vw
+
+      .copyright
+        font-size: 12px
+
+      a
+        color: $white
+        text-decoration: underline
+        transition: all 0.2s
+
+        &:hover
+          color: $red
+          transition: all 0.2s
