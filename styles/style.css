@@ -1,12 +1,10 @@
 @font-face {
-  font-family: "Zen Kaku Gothic New";
-  weight: normal;
-  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+  font-family: "Zen Medium";
+  src: url("/public/fonts/ZenKakuGothicNew-Medium.ttf");
 }
 @font-face {
-  font-family: "Zen Kaku Gothic New";
-  weight: bold;
-  src: url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap");
+  font-family: "Zen Black";
+  src: url("/public/fonts/ZenKakuGothicNew-Black.ttf");
 }
 @font-face {
   font-family: "Monaspace Krypton Var";
@@ -22,10 +20,21 @@
 }
 * {
   color: #EBE6DD;
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: normal;
+  font-family: "Zen Medium", sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+@media (max-width: 1024px) {
+  * {
+    scroll-padding-top: 120px;
+  }
+}
+@media (max-width: 640px) {
+  * {
+    scroll-padding-top: 80px;
+  }
 }
 
 body {
@@ -34,12 +43,15 @@ body {
 
 .container {
   width: 660px;
+  max-width: 660px;
   margin: 0 auto;
+  margin-top: 296px;
 }
 @media (max-width: 1024px) {
   .container {
     width: 100%;
     padding: 0 10px;
+    margin-top: 200px;
   }
 }
 
@@ -53,6 +65,7 @@ header .outside {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
   padding-left: 24px;
   z-index: 1000;
 }
@@ -257,14 +270,14 @@ header .inside .bottom a:hover {
   transition: all 0.2s;
 }
 
-.firstview {
+#firstview {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
   margin: 0 auto;
   margin-top: 90px;
 }
-.firstview .bg-graphic {
+#firstview .bg-graphic {
   width: 86vw;
   height: 43vw;
   background-image: url("/public/images/fv.jpg");
@@ -281,14 +294,14 @@ header .inside .bottom a:hover {
           mask-repeat: no-repeat;
 }
 @media (max-width: 640px) {
-  .firstview .bg-graphic {
+  #firstview .bg-graphic {
     width: 95vw;
     height: 95vw;
     -webkit-mask-image: url("/public/images/square-diamond.svg");
             mask-image: url("/public/images/square-diamond.svg");
   }
 }
-.firstview h1.title {
+#firstview h1.title {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
@@ -302,12 +315,79 @@ header .inside .bottom a:hover {
   margin: auto;
 }
 @media (max-width: 1024px) {
-  .firstview h1.title {
+  #firstview h1.title {
     font-size: 56px;
   }
 }
 @media (max-width: 640px) {
-  .firstview h1.title {
+  #firstview h1.title {
     font-size: 32px;
   }
+}
+
+#about .overview .text {
+  text-align: center;
+  margin-top: 32px;
+}
+#about .meaning .note {
+  text-align: center;
+}
+#about .meaning .items-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+}
+#about .meaning .items-wrapper .item {
+  width: 300px;
+}
+#about .meaning .items-wrapper .item img {
+  display: block;
+  margin: 0 auto;
+}
+#about .meaning .items-wrapper .item .caption {
+  margin-top: 32px;
+}
+
+#project h2.title {
+  font-family: "Monaspace Krypton Var";
+  font-weight: normal;
+  font-size: 64px;
+  text-align: center;
+}
+#project .items-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+}
+#project .items-wrapper .item {
+  width: 256px;
+}
+#project .items-wrapper .item .cover-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0A0A0A;
+}
+#project .items-wrapper .item h3.genre {
+  font-family: "Zen Black";
+  margin-top: 24px;
+}
+#project .items-wrapper .item .description {
+  margin-top: 8px;
+}
+#project .items-wrapper .item .description a {
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+#project .items-wrapper .item .description a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
+#project .items-wrapper #etrt .cover-image {
+  background-image: url("/public/images/etrt.png");
+}
+#project .items-wrapper #soon .description {
+  color: #D40000;
 }

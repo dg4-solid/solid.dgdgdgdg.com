@@ -16,7 +16,7 @@ function Header() {
   return (
     <header>
       <div className="outside">
-        <a href="" className="logo" onClick={() => menuReset()} />
+        <a href="#" className="logo" onClick={() => menuReset()} />
         <nav className={openState}>
           <a href="#about">About</a>
           <a href="#project">Project</a>
