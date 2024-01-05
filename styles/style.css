@@ -102,7 +102,13 @@ header .outside nav * {
   font-weight: lighter;
 }
 header .outside nav a {
+  color: #EBE6DD;
+  transition: all 0.2s;
   padding: 16px;
+}
+header .outside nav a:hover {
+  color: #D40000;
+  transition: all 0.2s;
 }
 header .outside .burger {
   width: 90px;
@@ -119,26 +125,6 @@ header .outside .burger {
 header .outside .burger:hover rect {
   fill: #D40000;
 }
-header .outside .burger:hover rect:nth-of-type(1) {
-  y: 6px;
-}
-@media (max-width: 640px) {
-  header .outside .burger:hover rect:nth-of-type(1) {
-    y: 4px;
-  }
-}
-header .outside .burger:hover rect:nth-of-type(2) {
-  visibility: hidden;
-  opacity: 0;
-}
-header .outside .burger:hover rect:nth-of-type(3) {
-  y: 18px;
-}
-@media (max-width: 640px) {
-  header .outside .burger:hover rect:nth-of-type(3) {
-    y: 12px;
-  }
-}
 header .outside .burger .line {
   width: 35px;
   height: 27px;
@@ -147,8 +133,8 @@ header .outside .burger .line {
 }
 @media (max-width: 640px) {
   header .outside .burger .line {
-    width: 30px;
-    height: 19px;
+    width: 24px;
+    height: 21px;
   }
 }
 header .outside .burger rect {
@@ -210,8 +196,73 @@ header .inside.is-open {
   top: 0;
   transition: all 0.5s;
 }
+header .inside nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateY(-112px);
+}
+@media (max-width: 640px) {
+  header .inside nav {
+    gap: 16px;
+    transform: translateY(-160px);
+  }
+}
+header .inside nav * {
+  font-family: "Monaspace Krypton Var";
+  font-weight: normal;
+  font-size: 64px;
+}
+@media (max-width: 640px) {
+  header .inside nav * {
+    font-size: 40px;
+  }
+}
+header .inside nav a {
+  color: #EBE6DD;
+  transition: all 0.2s;
+}
+header .inside nav a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
+header .inside .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  padding: 0 100px;
+}
+@media (max-width: 640px) {
+  header .inside .bottom {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+}
+header .inside .bottom .copyright {
+  font-size: 12px;
+}
+header .inside .bottom a {
+  color: #EBE6DD;
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+header .inside .bottom a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
 
 #fact {
   padding-top: 90px;
   min-height: 100vh;
+}
+@media (max-width: 640px) {
+  #fact {
+    padding-top: 70px;
+  }
 }
