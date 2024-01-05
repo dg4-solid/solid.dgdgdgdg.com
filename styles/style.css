@@ -337,15 +337,42 @@ header .inside .bottom a:hover {
   justify-content: space-between;
   margin-top: 56px;
 }
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 32px;
+    margin-top: 48px;
+  }
+}
 #about .meaning .items-wrapper .item {
   width: 300px;
 }
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item {
+    width: 100%;
+  }
+}
 #about .meaning .items-wrapper .item img {
   display: block;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item img {
+    width: 128px;
+    height: 128px;
+  }
 }
 #about .meaning .items-wrapper .item .caption {
   margin-top: 32px;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item .caption {
+    text-align: center;
+    margin-top: 16px;
+  }
 }
 
 #project h2.title {
@@ -354,10 +381,25 @@ header .inside .bottom a:hover {
   font-size: 64px;
   text-align: center;
 }
+@media (max-width: 640px) {
+  #project h2.title {
+    font-size: 32px;
+  }
+}
 #project .items-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 56px;
+}
+@media (max-width: 640px) {
+  #project .items-wrapper {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column;
+    gap: 56px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
 }
 #project .items-wrapper .item {
   width: 256px;
