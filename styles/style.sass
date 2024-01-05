@@ -1,6 +1,16 @@
 @import "config/_color"
+@import "config/_size"
 @import "config/_media"
 @import "config/_global"
 
 @import "components/_header"
 @import "components/_footer"
+
+#fact
+  padding-top: $header-height-pc
+
+  // TODO: あとで消す
+  min-height: 100vh
+
+  @include sp
+    padding-top: $header-height-sp
