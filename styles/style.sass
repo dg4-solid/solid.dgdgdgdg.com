@@ -1,16 +1,55 @@
-@import "config/_color"
-@import "config/_size"
-@import "config/_media"
-@import "config/_global"
+@import "config/color"
+@import "config/size"
+@import "config/media"
+@import "config/global"
 
-@import "components/_header"
-@import "components/_footer"
+@import "components/header"
+@import "components/footer"
 
-#fact
-  padding-top: $header-height-pc
+.firstview
+  width: fit-content
 
-  // TODO: あとで消す
-  min-height: 100vh
+  position: relative
 
-  @include sp
-    padding-top: $header-height-sp
+  margin: 0 auto
+  margin-top: $header-height-pc
+
+  .bg-graphic
+    width: 86vw
+    height: calc(86vw / 2)
+
+    background-image: url("/public/images/fv.jpg")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+    mask-image: url("/public/images/triangle.svg")
+    mask-size: cover
+    mask-position: center
+    mask-repeat: no-repeat
+
+    @include sp
+      width: 95vw
+      height: 95vw
+
+      mask-image: url("/public/images/square-diamond.svg")
+
+  h1.title
+    width: fit-content
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    transform: translateY(50%)
+
+    font-family: "Monaspace Krypton Var"
+    font-weight: normal
+    font-size: 72px
+
+    margin: auto
+
+    @include tab
+      font-size: 56px
+
+    @include sp
+      font-size: 32px

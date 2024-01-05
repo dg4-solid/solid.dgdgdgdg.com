@@ -130,13 +130,15 @@ header
     top: -100vh
     padding-top: $header-height-pc
     background-color: $black-darker
+
+    z-index: 999
+
     transition: all 0.5s
 
     @include sp
       padding-top: $header-height-sp
 
     &.is-open
-      z-index: 999
       top: 0
       transition: all 0.5s
 

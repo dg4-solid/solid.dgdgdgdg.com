@@ -2,7 +2,10 @@ function App() {
   return (
     <main>
       <Header />
-      <div id="fact">This is page</div>
+      <section className="firstview">
+        <div className="bg-graphic"></div>
+        <h1 className="title">Solid Point</h1>
+      </section>
       <Footer />
     </main>
   );
