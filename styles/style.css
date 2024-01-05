@@ -184,6 +184,7 @@ header .inside {
   top: -100vh;
   padding-top: 90px;
   background-color: #0A0A0A;
+  z-index: 999;
   transition: all 0.5s;
 }
 @media (max-width: 640px) {
@@ -192,7 +193,6 @@ header .inside {
   }
 }
 header .inside.is-open {
-  z-index: 999;
   top: 0;
   transition: all 0.5s;
 }
@@ -257,12 +257,57 @@ header .inside .bottom a:hover {
   transition: all 0.2s;
 }
 
-#fact {
-  padding-top: 90px;
-  min-height: 100vh;
+.firstview {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+.firstview .bg-graphic {
+  width: 86vw;
+  height: 43vw;
+  background-image: url("/public/images/fv.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/public/images/triangle.svg");
+          mask-image: url("/public/images/triangle.svg");
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 @media (max-width: 640px) {
-  #fact {
-    padding-top: 70px;
+  .firstview .bg-graphic {
+    width: 95vw;
+    height: 95vw;
+    -webkit-mask-image: url("/public/images/square-diamond.svg");
+            mask-image: url("/public/images/square-diamond.svg");
+  }
+}
+.firstview h1.title {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  font-family: "Monaspace Krypton Var";
+  font-weight: normal;
+  font-size: 72px;
+  margin: auto;
+}
+@media (max-width: 1024px) {
+  .firstview h1.title {
+    font-size: 56px;
+  }
+}
+@media (max-width: 640px) {
+  .firstview h1.title {
+    font-size: 32px;
   }
 }
