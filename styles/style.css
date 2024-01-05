@@ -249,12 +249,13 @@ header .inside .bottom {
   position: absolute;
   bottom: 40px;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 7vw;
 }
 @media (max-width: 640px) {
   header .inside .bottom {
     flex-direction: column-reverse;
     gap: 16px;
+    padding: 0 2.5vw;
   }
 }
 header .inside .bottom .copyright {
@@ -270,14 +271,47 @@ header .inside .bottom a:hover {
   transition: all 0.2s;
 }
 
-#firstview {
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 7vw;
+  margin: 80px 0;
+}
+@media (max-width: 640px) {
+  footer {
+    flex-direction: column-reverse;
+    gap: 16px;
+    padding: 0 2.5vw;
+    margin: 56px 0;
+  }
+}
+footer .copyright {
+  font-size: 12px;
+}
+footer .link-wrapper {
+  display: flex;
+  gap: 40px;
+}
+footer .link-wrapper a {
+  color: #EBE6DD;
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+footer .link-wrapper a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
+
+.shape {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
   margin: 0 auto;
   margin-top: 90px;
 }
-#firstview .bg-graphic {
+.shape .bg-graphic {
   width: 86vw;
   height: 43vw;
   background-image: url("/public/images/fv.jpg");
@@ -294,14 +328,14 @@ header .inside .bottom a:hover {
           mask-repeat: no-repeat;
 }
 @media (max-width: 640px) {
-  #firstview .bg-graphic {
+  .shape .bg-graphic {
     width: 95vw;
     height: 95vw;
     -webkit-mask-image: url("/public/images/square-diamond.svg");
             mask-image: url("/public/images/square-diamond.svg");
   }
 }
-#firstview h1.title {
+.shape h1.title {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
@@ -315,12 +349,12 @@ header .inside .bottom a:hover {
   margin: auto;
 }
 @media (max-width: 1024px) {
-  #firstview h1.title {
+  .shape h1.title {
     font-size: 56px;
   }
 }
 @media (max-width: 640px) {
-  #firstview h1.title {
+  .shape h1.title {
     font-size: 32px;
   }
 }
@@ -432,4 +466,13 @@ header .inside .bottom a:hover {
 }
 #project .items-wrapper #soon .description {
   color: #D40000;
+}
+
+#endview {
+  margin-top: 296px;
+}
+@media (max-width: 1024px) {
+  #endview {
+    margin-top: 200px;
+  }
 }

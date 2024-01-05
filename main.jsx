@@ -2,7 +2,7 @@ function App() {
   return (
     <main>
       <Header />
-      <section id="firstview">
+      <section id="firstview" className="shape">
         <div className="bg-graphic"></div>
         <h1 className="title">Solid Point</h1>
       </section>
@@ -61,6 +61,9 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+      <section id="endview" className="shape">
+        <div className="bg-graphic"></div>
       </section>
       <Footer />
     </main>
