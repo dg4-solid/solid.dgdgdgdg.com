@@ -34,7 +34,7 @@
 
       mask-image: url("/public/images/square-diamond.svg")
 
-  h1.title
+  span.title
     width: fit-content
     position: absolute
     left: 0
@@ -42,17 +42,22 @@
     bottom: 0
     transform: translateY(50%)
 
-    font-family: "Monaspace Krypton Var"
-    font-weight: normal
-    font-size: 72px
-
     margin: auto
 
-    @include tab
-      font-size: 56px
-
     @include sp
-      font-size: 32px
+      text-align: center
+
+    h1
+
+      font-family: "Monaspace Krypton Var"
+      font-weight: normal
+      font-size: 72px
+
+      @include tab
+        font-size: 56px
+
+      @include sp
+        font-size: 32px
 
 #about
   .overview .text

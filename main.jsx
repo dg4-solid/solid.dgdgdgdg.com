@@ -4,7 +4,10 @@ function App() {
       <Header />
       <section id="firstview" className="shape">
         <div className="bg-graphic"></div>
-        <h1 className="title">Solid Point</h1>
+        <span className="title">
+          <p className="slogan">想像の閃きが実体を得る凝固点</p>
+          <h1>image</h1>
+        </span>
       </section>
       <section id="about">
         <div className="container overview">
