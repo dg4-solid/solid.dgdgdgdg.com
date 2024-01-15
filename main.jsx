@@ -65,7 +65,7 @@ function App() {
       <section id="endview" className="shape">
         <div className="bg-graphic"></div>
       </section>
-      <Footer />
+      <BrandBar type="footer" />
     </main>
   );
 }

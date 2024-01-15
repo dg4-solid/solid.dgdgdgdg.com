@@ -44,12 +44,7 @@ function Header() {
           </a>
         </nav>
 
-        <div className="bottom">
-          <p className="copyright">&copy; dgdgdgdg Solid Point 2024</p>
-          <a href="https://www.dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
-            dgdgdgdg
-          </a>
-        </div>
+        <BrandBar />
       </div>
     </header>
   );
