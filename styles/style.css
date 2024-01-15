@@ -312,7 +312,7 @@ header .inside #brandBar {
             mask-image: url("/public/images/square-diamond.svg");
   }
 }
-.shape h1.title {
+.shape span.title {
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
@@ -320,18 +320,25 @@ header .inside #brandBar {
   right: 0;
   bottom: 0;
   transform: translateY(50%);
+  margin: auto;
+}
+@media (max-width: 640px) {
+  .shape span.title {
+    text-align: center;
+  }
+}
+.shape span.title h1 {
   font-family: "Monaspace Krypton Var";
   font-weight: normal;
   font-size: 72px;
-  margin: auto;
 }
 @media (max-width: 1024px) {
-  .shape h1.title {
+  .shape span.title h1 {
     font-size: 56px;
   }
 }
 @media (max-width: 640px) {
-  .shape h1.title {
+  .shape span.title h1 {
     font-size: 32px;
   }
 }
