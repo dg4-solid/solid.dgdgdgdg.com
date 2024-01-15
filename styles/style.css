@@ -242,36 +242,13 @@ header .inside nav a:hover {
   color: #D40000;
   transition: all 0.2s;
 }
-header .inside .bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header .inside #brandBar {
   position: absolute;
   bottom: 40px;
-  width: 100%;
-  padding: 0 7vw;
-}
-@media (max-width: 640px) {
-  header .inside .bottom {
-    flex-direction: column-reverse;
-    gap: 16px;
-    padding: 0 2.5vw;
-  }
-}
-header .inside .bottom .copyright {
-  font-size: 12px;
-}
-header .inside .bottom a {
-  color: #EBE6DD;
-  text-decoration: underline;
-  transition: all 0.2s;
-}
-header .inside .bottom a:hover {
-  color: #D40000;
-  transition: all 0.2s;
+  margin: 0;
 }
 
-footer {
+#brandBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -280,26 +257,26 @@ footer {
   margin: 80px 0;
 }
 @media (max-width: 640px) {
-  footer {
+  #brandBar {
     flex-direction: column-reverse;
     gap: 16px;
     padding: 0 2.5vw;
     margin: 56px 0;
   }
 }
-footer .copyright {
+#brandBar .copyright {
   font-size: 12px;
 }
-footer .link-wrapper {
+#brandBar .link-wrapper {
   display: flex;
   gap: 40px;
 }
-footer .link-wrapper a {
+#brandBar .link-wrapper a {
   color: #EBE6DD;
   text-decoration: underline;
   transition: all 0.2s;
 }
-footer .link-wrapper a:hover {
+#brandBar .link-wrapper a:hover {
   color: #D40000;
   transition: all 0.2s;
 }
