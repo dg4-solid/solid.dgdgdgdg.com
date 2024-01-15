@@ -1,6 +1,6 @@
-const SiteLinks = ({ type }) => {
+const BrandBar = ({ type }) => {
   return (
-    <div id="siteLinks">
+    <div id="brandBar">
       <p className="copyright">&copy; dgdgdgdg Solid Point 2024</p>
       <div className="link-wrapper">
         <a href="https://www.dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
