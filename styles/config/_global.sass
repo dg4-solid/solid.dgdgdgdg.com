@@ -48,3 +48,28 @@ body
     width: 100%
     padding: 0 10px
     margin-top: 200px
+
+  h2.title
+    font-family: "Monaspace Krypton Var"
+    font-weight: normal
+    font-size: 64px
+    text-align: center
+    @include sp
+      font-size: 32px
+
+    & + *
+      margin-top: 56px
+      @include sp
+        margin-top: 32px
+
+  h3
+    font-family: "Monaspace Krypton Var", "Zen Black"
+    font-weight: bold
+    font-size: 32px
+    @include sp
+      font-size: 24px
+
+    & + *
+      margin-top: 40px
+      @include sp
+        margin-top: 24px
