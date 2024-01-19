@@ -1,4 +1,4 @@
-function Header() {
+function Header({ displayLogo }) {
   const [openMenu, setOpenMenu] = React.useState(false);
   const menuFunction = () => setOpenMenu(!openMenu);
   const menuReset = () => setOpenMenu(false);
@@ -13,10 +13,18 @@ function Header() {
     }
   }, [openMenu]);
 
+  // displayLogoがtrueの時はロゴを表示する
+  let logoState = displayLogo ? "" : "is-hidden";
+
+  // メニューが開いている時はロゴを表示する
+  if (openMenu) {
+    logoState = "";
+  }
+
   return (
     <header>
       <div className="outside">
-        <a href="#" className="logo" onClick={() => menuReset()} />
+        <a href="#" className={`logo ${logoState}`} onClick={() => menuReset()} />
         <nav className={openState}>
           <a href="#about">About</a>
           <a href="#project">Project</a>
