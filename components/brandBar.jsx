@@ -6,6 +6,9 @@ const BrandBar = ({ type }) => {
         <a href="https://www.dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
           dgdgdgdg
         </a>
+        <a href="http://x.com/dg4_solid" target="_blank" rel="noopener noreferrer">
+          Official X
+        </a>
         {type === "footer" && <a href="mailto:solid@dgdgdgdg.com">Contact</a>}
       </div>
     </div>
