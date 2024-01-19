@@ -1,10 +1,35 @@
 function App() {
+  const [isLogotypeInView, setIsLogotypeInView] = React.useState(true);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsLogotypeInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 } // 50%以上が表示されたときにtrueを返す
+    );
+
+    const logotype = document.getElementById("logotype");
+    if (logotype) {
+      observer.observe(logotype);
+    }
+
+    return () => {
+      if (logotype) {
+        observer.unobserve(logotype);
+      }
+    };
+  }, []);
+
   return (
     <main>
-      <Header />
+      <Header displayLogo={!isLogotypeInView} />
       <section id="firstview" className="shape">
         <div className="bg-graphic"></div>
-        <h1 className="title">Solid Point</h1>
+        <span className="title">
+          <p className="slogan">想像の閃きが実体を得る凝固点</p>
+          <h1 id="logotype" />
+        </span>
       </section>
       <section id="about">
         <div className="container overview">
