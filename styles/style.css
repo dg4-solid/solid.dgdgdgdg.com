@@ -281,6 +281,13 @@ header .inside #brandBar {
   display: flex;
   gap: 40px;
 }
+@media (max-width: 640px) {
+  #brandBar .link-wrapper {
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    justify-content: center;
+  }
+}
 #brandBar .link-wrapper a {
   color: #EBE6DD;
   text-decoration: underline;
@@ -341,7 +348,7 @@ header .inside #brandBar {
 }
 .shape span.title p.slogan {
   text-align: right;
-  padding-right: 32px;
+  padding-right: 34px;
   margin-bottom: -32px;
 }
 @media (max-width: 1024px) {
@@ -353,6 +360,7 @@ header .inside #brandBar {
 @media (max-width: 640px) {
   .shape span.title p.slogan {
     padding-right: 6vw;
+    margin-bottom: -16px;
   }
 }
 .shape span.title h1#logotype {
