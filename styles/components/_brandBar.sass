@@ -19,6 +19,12 @@
   .link-wrapper
     display: flex
     gap: 40px
+
+    @include sp
+      flex-wrap: wrap
+      gap: 16px 40px
+      justify-content: center
+
     a
       color: $white
       text-decoration: underline
