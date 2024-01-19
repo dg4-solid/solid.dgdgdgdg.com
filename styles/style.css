@@ -281,6 +281,13 @@ header .inside #brandBar {
   display: flex;
   gap: 40px;
 }
+@media (max-width: 640px) {
+  #brandBar .link-wrapper {
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    justify-content: center;
+  }
+}
 #brandBar .link-wrapper a {
   color: #EBE6DD;
   text-decoration: underline;
