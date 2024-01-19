@@ -45,19 +45,39 @@
     margin: auto
 
     @include sp
-      text-align: center
+      width: 100%
+      display: block
+      margin: 0
 
-    h1
-
-      font-family: "Monaspace Krypton Var"
-      font-weight: normal
-      font-size: 72px
+    p.slogan
+      text-align: right
+      padding-right: 32px
+      margin-bottom: -32px
 
       @include tab
-        font-size: 56px
+        padding-right: 24px
+        margin-bottom: -24px
 
       @include sp
-        font-size: 32px
+        padding-right: 6vw
+
+    h1#logotype
+      width: 582px
+      aspect-ratio: 7 / 2
+
+      mask-image: url("/public/images/logotype.svg")
+      mask-size: contain
+      mask-repeat: no-repeat
+      mask-position: center
+
+      background-color: $white
+
+      @include tab
+        width: 400px
+
+      @include sp
+        display: block
+        width: 100%
 
 #about
   .overview .text

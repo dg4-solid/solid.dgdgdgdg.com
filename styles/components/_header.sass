@@ -23,11 +23,14 @@ header
       height: 57px
 
       mask-image: url("/public/images/logotype.svg")
+      mask-size: contain
       mask-repeat: no-repeat
       mask-position: center
 
       background-color: $white
 
+      opacity: 1
+      visibility: visible
       transition: all 0.2s
 
       @include sp
@@ -36,6 +39,11 @@ header
 
       &:hover
         background-color: $red
+        transition: all 0.2s
+
+      &.is-hidden
+        opacity: 0
+        visibility: hidden
         transition: all 0.2s
 
     nav
@@ -75,6 +83,7 @@ header
       @include sp
         width: $header-height-sp
         height: $header-height-sp
+        margin-left: auto
 
       &:hover rect
         fill: $red

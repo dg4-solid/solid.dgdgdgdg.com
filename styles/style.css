@@ -79,11 +79,15 @@ header .outside .logo {
   height: 57px;
   -webkit-mask-image: url("/public/images/logotype.svg");
           mask-image: url("/public/images/logotype.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
   background-color: #EBE6DD;
+  opacity: 1;
+  visibility: visible;
   transition: all 0.2s;
 }
 @media (max-width: 640px) {
@@ -94,6 +98,11 @@ header .outside .logo {
 }
 header .outside .logo:hover {
   background-color: #D40000;
+  transition: all 0.2s;
+}
+header .outside .logo.is-hidden {
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.2s;
 }
 header .outside nav {
@@ -133,6 +142,7 @@ header .outside .burger {
   header .outside .burger {
     width: 70px;
     height: 70px;
+    margin-left: auto;
   }
 }
 header .outside .burger:hover rect {
@@ -324,22 +334,49 @@ header .inside #brandBar {
 }
 @media (max-width: 640px) {
   .shape span.title {
-    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0;
   }
 }
-.shape span.title h1 {
-  font-family: "Monaspace Krypton Var";
-  font-weight: normal;
-  font-size: 72px;
+.shape span.title p.slogan {
+  text-align: right;
+  padding-right: 32px;
+  margin-bottom: -32px;
 }
 @media (max-width: 1024px) {
-  .shape span.title h1 {
-    font-size: 56px;
+  .shape span.title p.slogan {
+    padding-right: 24px;
+    margin-bottom: -24px;
   }
 }
 @media (max-width: 640px) {
-  .shape span.title h1 {
-    font-size: 32px;
+  .shape span.title p.slogan {
+    padding-right: 6vw;
+  }
+}
+.shape span.title h1#logotype {
+  width: 582px;
+  aspect-ratio: 7/2;
+  -webkit-mask-image: url("/public/images/logotype.svg");
+          mask-image: url("/public/images/logotype.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #EBE6DD;
+}
+@media (max-width: 1024px) {
+  .shape span.title h1#logotype {
+    width: 400px;
+  }
+}
+@media (max-width: 640px) {
+  .shape span.title h1#logotype {
+    display: block;
+    width: 100%;
   }
 }
 
