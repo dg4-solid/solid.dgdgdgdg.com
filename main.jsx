@@ -6,7 +6,7 @@ function App() {
       ([entry]) => {
         setIsLogotypeInView(entry.isIntersecting);
       },
-      { threshold: 0.5 } // 50%以上が表示されたときにtrueを返す
+      { threshold: 0.166 } // 50%以上が表示されたときにtrueを返す
     );
 
     const logotype = document.getElementById("logotype");
@@ -33,6 +33,8 @@ function App() {
       </section>
       <section id="about">
         <div className="container overview">
+          <h2 className="title">About</h2>
+          <h3>Overview</h3>
           <img src="/public/images/ogp.jpg" alt="" />
           <p className="text">
             dgdgdgdgが主宰する合作プロジェクト
@@ -41,6 +43,7 @@ function App() {
           </p>
         </div>
         <div className="container meaning">
+          <h3>Meaning of Solid Point</h3>
           <p className="note">Solid Pointは日本語で「凝固点（物質が液体から固体へと変化する瞬間）」</p>
           <div className="items-wrapper">
             <div className="item">
@@ -59,8 +62,8 @@ function App() {
           <h2 className="title">Project</h2>
           <div className="items-wrapper">
             <div id="etrt" className="item">
-              <div className="cover-image" />
               <h3 className="genre">📻&nbsp;Radio</h3>
+              <div className="cover-image" />
               <p className="description">
                 Collaborator: Tusk
                 <br />
@@ -80,8 +83,8 @@ function App() {
               </p>
             </div>
             <div id="soon" className="item">
-              <div className="cover-image" />
               <h3 className="genre">🎨&nbsp;Graphic</h3>
+              <div className="cover-image" />
               <p className="description">Coming soon...</p>
             </div>
           </div>

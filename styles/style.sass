@@ -85,9 +85,15 @@
     text-align: center
     margin-top: 32px
 
+    @include sp
+      text-align: left
+
   .meaning
     .note
       text-align: center
+
+      @include sp
+        text-align: left
 
     .items-wrapper
       display: flex
@@ -118,58 +124,43 @@
         .caption
           margin-top: 32px
           @include sp
-            text-align: center
             margin-top: 16px
 
-#project
-  h2.title
-    font-family: "Monaspace Krypton Var"
-    font-weight: normal
-    font-size: 64px
-    text-align: center
-    @include sp
-      font-size: 32px
+#project .items-wrapper
+  display: flex
+  justify-content: space-between
+  @include sp
+    width: fit-content
+    flex-direction: column
+    gap: 56px
+    margin-right: auto
+    margin-left: auto
 
-  .items-wrapper
-    display: flex
-    justify-content: space-between
-    margin-top: 56px
-    @include sp
-      width: fit-content
-      flex-direction: column
-      gap: 56px
-      margin: 0 auto
-      margin-top: 40px
+  .item
+    width: 256px
+    .cover-image
+      width: 100%
+      aspect-ratio: 1 / 1
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-color: $black-darker
 
-    .item
-      width: 256px
-      .cover-image
-        width: 100%
-        aspect-ratio: 1 / 1
-        background-size: cover
-        background-position: center
-        background-repeat: no-repeat
-        background-color: $black-darker
-
-      h3.genre
-        font-family: "Zen Black"
-        margin-top: 24px
-      .description
-        margin-top: 8px
-        a
-          text-decoration: underline
+      margin-top: 16px
+    .description
+      margin-top: 16px
+      a
+        text-decoration: underline
+        transition: all 0.2s
+        &:hover
+          color: $red
           transition: all 0.2s
-          &:hover
-            color: $red
-            transition: all 0.2s
 
-    #etrt
-      .cover-image
-        background-image: url("/public/images/etrt.png")
+  #etrt .cover-image
+    background-image: url("/public/images/etrt.png")
 
-    #soon
-      .description
-        color: $red
+  #soon .description
+    color: $red
 
 #endview
   margin-top: 296px
