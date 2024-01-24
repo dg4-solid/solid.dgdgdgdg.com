@@ -1,10 +1,6 @@
-@import "config/color"
-@import "config/size"
-@import "config/media"
-@import "config/global"
-
-@import "components/header"
-@import "components/brandBar"
+@import "@/styles/config/color.sass"
+@import "@/styles/config/media.sass"
+@import "@/styles/config/size.sass"
 
 .shape
   width: fit-content
@@ -18,12 +14,12 @@
     width: 86vw
     height: calc(86vw / 2)
 
-    background-image: url("/public/images/fv.jpg")
+    background-image: url("/images/fv.jpg")
     background-size: cover
     background-position: center
     background-repeat: no-repeat
 
-    mask-image: url("/public/images/triangle.svg")
+    mask-image: url("/images/triangle.svg")
     mask-size: cover
     mask-position: center
     mask-repeat: no-repeat
@@ -32,7 +28,7 @@
       width: 95vw
       height: 95vw
 
-      mask-image: url("/public/images/square-diamond.svg")
+      mask-image: url("/images/square-diamond.svg")
 
   span.title
     width: fit-content
@@ -66,7 +62,7 @@
       width: 582px
       aspect-ratio: 7 / 2
 
-      mask-image: url("/public/images/logotype.svg")
+      mask-image: url("/images/logotype.svg")
       mask-size: contain
       mask-repeat: no-repeat
       mask-position: center
@@ -157,7 +153,7 @@
           transition: all 0.2s
 
   #etrt .cover-image
-    background-image: url("/public/images/etrt.png")
+    background-image: url("/images/etrt.png")
 
   #soon .description
     color: $red
