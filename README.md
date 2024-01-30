@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# dgdgdgdg Solid Point's Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+dgdgdgdg Solid Point の Web サイトです。
 
-Currently, two official plugins are available:
+![ogp](https://www.solid.dgdgdgdg.com/images/ogp.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![technology](https://img.shields.io/badge/-technology-333.svg?style=for-the-badge)
 
-## Expanding the ESLint configuration
+![Next](https://img.shields.io/badge/-React-000.svg?logo=React&style=for-the-badge)
+![Typescript](https://img.shields.io/badge/-Typescript-000.svg?logo=typescript&style=for-the-badge)
+![Sass](https://img.shields.io/badge/-Sass-000.svg?logo=sass&style=for-the-badge)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![S3](https://img.shields.io/badge/-Amazon%20S3-000.svg?logo=amazon-s3&style=for-the-badge)
 
-- Configure the top-level `parserOptions` property like this:
+![Commit Message](https://img.shields.io/badge/-commit%20message-333.svg?style=for-the-badge)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![ja-jp](https://img.shields.io/badge/-ja__JP-004444.svg?style=for-the-badge)
+![en-us](https://img.shields.io/badge/-en__US-004444.svg?style=for-the-badge)
