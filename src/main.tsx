@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from '@/App';
+import App from '@/pages/App';
 import '@/styles/_reset.css';
 
 import '@/styles/config/size.sass';
