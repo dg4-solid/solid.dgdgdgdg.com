@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import Header from '@/components/header';
+
 import BrandBar from '@/components/brandBar';
+import Header from '@/components/header';
 
 import '@/styles/style.sass';
 
@@ -43,9 +44,14 @@ function App() {
           <h3>Overview</h3>
           <img src='/images/ogp.jpg' alt='' />
           <p className='text'>
-            dgdgdgdgが主宰する合作プロジェクト
+            dgdgdgdgを始点として、デザイン、映像、音楽
             <br />
-            硬くてクールなモノづくりをしよう
+            などの分野で新たな道を切り開きます。
+          </p>
+          <p className='text'>
+            私たちは、共作による視点の拡張を通じて、
+            <br />
+            一人では成し得ないものづくりを追求します。
           </p>
         </div>
         <div className='container meaning'>
