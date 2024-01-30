@@ -64,7 +64,7 @@ function App() {
             <div className='item'>
               <img src='/images/icon-invention.svg' alt='' />
               <p className='caption'>
-                アイデアが具体的な形や作品として凝固する、創作行為の転換点を表す
+                アイデアが具体的な形や作品として凝固する、ものづくりの転換点を表す
               </p>
             </div>
             <div className='item'>
