@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import Header from '@/components/header';
+
 import BrandBar from '@/components/brandBar';
+import Header from '@/components/header';
 
 import '@/styles/style.sass';
 
