@@ -72,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ needs.prepare.outputs.new_version }}
-          release_name: Release v${{ needs.prepare.outputs.new_version }}
+          release_name: v${{ needs.prepare.outputs.new_version }}
           draft: false
           prerelease: false
           body: 'Full Changelog: https://github.com/dg4-solid/solid.dgdgdgdg.com/compare/${{ needs.prepare.outputs.latest_tag }}...v${{ needs.prepare.outputs.new_version }}'
