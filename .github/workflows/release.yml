@@ -1,0 +1,62 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.tag.outputs.new_tag }}
+      previous_tag: ${{ steps.tag.outputs.previous_tag }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get previous tag
+        id: prev_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+      - name: Calculate new tag
+        id: new_tag
+        run: echo "::set-output name=new_tag::$(git describe --tags --abbrev=0)"
+      - name: Set outputs
+        id: tag
+        run: |
+          echo "::set-output name=previous_tag::${{ steps.prev_tag.outputs.tag }}"
+          echo "::set-output name=new_tag::${{ steps.new_tag.outputs.new_tag }}"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: dist/
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.prepare.outputs.new_tag }}
+          release_name: Release ${{ needs.prepare.outputs.new_tag }}
+          draft: false
+          prerelease: false
+          body: |
+            **Full Changelog**: https://github.com/dg4-solid/solid.dgdgdgdg.com/compare/v${{ needs.prepare.outputs.previous_tag }}...v${{ needs.prepare.outputs.new_tag }}
