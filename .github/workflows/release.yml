@@ -14,6 +14,8 @@ jobs:
       latest_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
       - uses: actions/checkout@v2
+      - name: Fetch tags
+        run: git fetch --tags
       - name: Get latest tag
         id: latest_tag
         run: |
@@ -22,7 +24,7 @@ jobs:
       - name: Check for version change
         id: version_change
         run: |
-          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+          git fetch --depth=50 origin +refs/tags/*:refs/tags/*
           LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
           echo "Latest tag: $LATEST_TAG"
           VERSION_CHANGE=$(git diff $LATEST_TAG HEAD -- package.json | grep '"version":')
