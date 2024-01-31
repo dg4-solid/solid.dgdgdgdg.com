@@ -16,7 +16,8 @@ jobs:
       - name: Check for version change
         id: version_change
         run: |
-          VERSION_CHANGE=$(git diff HEAD^ HEAD -- package.json | grep '"version":')
+          git fetch origin main
+          VERSION_CHANGE=$(git diff origin/main HEAD -- package.json | grep '"version":')
           if [ "$VERSION_CHANGE" != "" ]; then
             echo "Version changed."
             echo "::set-output name=changed::true"
