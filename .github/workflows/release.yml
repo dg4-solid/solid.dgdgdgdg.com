@@ -11,8 +11,14 @@ jobs:
     outputs:
       version_changed: ${{ steps.version_change.outputs.changed }}
       new_version: ${{ steps.get_version.outputs.version }}
+      latest_tag: ${{ steps.latest_tag.outputs.tag }}
     steps:
       - uses: actions/checkout@v2
+      - name: Get latest tag
+        id: latest_tag
+        run: |
+          LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+          echo "::set-output name=tag::$LATEST_TAG"
       - name: Check for version change
         id: version_change
         run: |
@@ -67,4 +73,4 @@ jobs:
           release_name: Release v${{ needs.prepare.outputs.new_version }}
           draft: false
           prerelease: false
-          body: 'Full Changelog: https://github.com/your-username/your-repository/compare/${LATEST_TAG}...v${{ needs.prepare.outputs.new_version }}'
+          body: 'Full Changelog: https://github.com/dg4-solid/solid.dgdgdgdg.com/compare/${{ needs.prepare.outputs.latest_tag }}...v${{ needs.prepare.outputs.new_version }}'
