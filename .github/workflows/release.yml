@@ -13,6 +13,11 @@ jobs:
       previous_tag: ${{ steps.tag.outputs.previous_tag }}
     steps:
       - uses: actions/checkout@v2
+      - name: Check for version change
+        id: version_change
+        run: |
+          VERSION_CHANGE=$(git diff HEAD^ HEAD -- package.json | grep '"version":' && echo 'true' || echo 'false')
+          echo "::set-output name=changed::$VERSION_CHANGE"
       - name: Get previous tag
         id: prev_tag
         uses: WyriHaximus/github-action-get-previous-tag@v1
@@ -27,6 +32,7 @@ jobs:
 
   build:
     needs: prepare
+    if: needs.prepare.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -46,6 +52,7 @@ jobs:
 
   release:
     needs: build
+    if: needs.prepare.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
