@@ -110,7 +110,7 @@ function App() {
               </p>
             </div>
             <div id='soon' className='item'>
-              <h3 className='genre'>🎨&nbsp;Graphic</h3>
+              <h3 className='genre'>🎨&nbsp;Visual</h3>
               <div className='cover-image' />
               <p className='description'>Coming soon...</p>
             </div>
