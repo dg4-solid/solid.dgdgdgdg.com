@@ -62,14 +62,14 @@ const Radio = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <img src='/images/icon-x.svg' alt='' />
+                  <img src='/images/icon/x.svg' alt='' />
                 </a>
                 <a
                   href='https://instagram.com/tusk_15679'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <img src='/images/icon-instagram.svg' alt='' />
+                  <img src='/images/icon/instagram.svg' alt='' />
                 </a>
               </div>
             </div>
