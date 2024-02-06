@@ -138,6 +138,11 @@
 
   .item
     width: 256px
+    transition: 0.2s
+
+    &.soon h3, &.soon .description
+      color: rgba($white, 0.5)
+
     .cover-image
       width: 100%
       aspect-ratio: 1 / 1
@@ -147,20 +152,34 @@
       background-color: $black-darker
 
       margin-top: 16px
-    .description
+
+    .description, .collaborator, .more
       margin-top: 16px
-      a
+
+    .more
+      color: $red
+      display: inline-block
+      position: relative
+      &::after
+        content: ""
+        display: block
+        width: 0.6em
+        height: 0.8em
+
+        position: absolute
+        right: -1em
+        top: 0.45em
+
+        background-color: $red
+        mask-image: url("/images/carret-triangle.svg")
+        mask-size: contain
+        mask-position: center
+        mask-repeat: no-repeat
+      &:hover
         text-decoration: underline
-        transition: all 0.2s
-        &:hover
-          color: $red
-          transition: all 0.2s
 
-  #etrt .cover-image
-    background-image: url("/images/etrt.png")
-
-  #soon .description
-    color: $red
+  #radio .cover-image
+    background-image: url("/images/radio-cover.png")
 
 #endview
   margin-top: 296px

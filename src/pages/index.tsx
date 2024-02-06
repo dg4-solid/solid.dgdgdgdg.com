@@ -13,7 +13,7 @@ const Top = () => {
       ([entry]) => {
         setIsLogotypeInView(entry.isIntersecting);
       },
-      { threshold: 0.166 }, // 50%以上が表示されたときにtrueを返す
+      { threshold: 0.166 },
     );
 
     const logotype = document.getElementById('logotype');
@@ -80,37 +80,19 @@ const Top = () => {
         <div className='container'>
           <h2 className='title'>Project</h2>
           <div className='items-wrapper'>
-            <div id='etrt' className='item'>
-              <h3 className='genre'>📻&nbsp;Radio</h3>
+            <a href='/project/radio' id='radio' className='item'>
+              <h3 className='genre'>Radio 📻</h3>
               <div className='cover-image' />
               <p className='description'>
-                Collaborator: Tusk
-                <br />
-                <br />
                 ゆるく雑談するラジオ
                 <br />
                 「ラジオのタイトルを入力」
-                <br />
-                <br />
-                <a
-                  href='https://www.youtube.com/@EtRt'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  YouTubeチャンネル
-                </a>
-                <br />
-                <a
-                  href='https://www.radio.dgdgdgdg.com/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  おたよりフォーム
-                </a>
               </p>
-            </div>
-            <div id='soon' className='item'>
-              <h3 className='genre'>🎨&nbsp;Visual</h3>
+              <p className='collaborator'>Collaborator: Tusk</p>
+              <p className='more'>さらに詳しく</p>
+            </a>
+            <div id='vision' className='item soon'>
+              <h3 className='genre'>Visual 🎨</h3>
               <div className='cover-image' />
               <p className='description'>Coming soon...</p>
             </div>
