@@ -1,0 +1,103 @@
+@import "@/styles/config/color.sass"
+@import "@/styles/config/media.sass"
+@import "@/styles/config/size.sass"
+
+#article-header
+  a.back
+    position: fixed
+    top: 19px
+    left: 61px
+
+    padding: 10px 0px
+
+    font-size: 20px
+    font-family: "Monaspace Krypton Var"
+
+    &::before
+      content: ""
+      display: block
+      width: 0.6em
+      height: 0.8em
+
+      position: absolute
+      left: -1.2em
+      top: calc(0.31em + 10px)
+
+      background-color: $white
+      mask-image: url("/images/carret-triangle.svg")
+      mask-size: contain
+      mask-position: center
+      mask-repeat: no-repeat
+
+      transform: rotate(180deg)
+
+  .container
+    margin-top: 128px
+    h1
+      font-family: "Monaspace Krypton Var"
+      font-weight: normal
+      font-size: 64px
+    img
+      aspect-ratio: 8 / 5
+      object-fit: cover
+      margin-top: 16px
+
+#about .container
+  .text
+    text-align: center
+
+    & + *
+      margin-top: 40px
+
+#member .container .items-wrapper
+  display: flex
+  justify-content: space-between
+  @include sp
+    width: fit-content
+    flex-direction: column
+    gap: 56px
+    margin-right: auto
+    margin-left: auto
+  .item
+    width: 256px
+    .profile-image
+      width: 100%
+      aspect-ratio: 1 / 1
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+
+      border-radius: 50%
+
+      margin-top: 16px
+
+    h3.name
+      font-family: "Zen black"
+      font-size: 18px
+      margin-top: 16px
+
+    .position
+      margin-top: 8px
+
+    .social-wrapper
+      display: flex
+
+      margin-top: 24px
+      a
+        display: block
+        width: 48px
+        height: 48px
+
+        transition: 0.2s
+        &:hover
+          background-color: rgba($white, 0.1)
+          transition: 0.2s
+
+  #tusk .profile-image
+    background-image: url("/images/member/tusk.png")
+
+  #dgdgdgdg .profile-image
+    background-image: url("/images/member/dgdgdgdg.png")
+
+#brandBar
+  margin-top: 200px
