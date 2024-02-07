@@ -68,8 +68,15 @@
   text-align: center;
   margin-top: 16px;
 }
-#about .container .text + * {
+#about .container .button-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-top: 40px;
+}
+#about .container .button-wrapper .component-button {
+  margin: 0;
 }
 
 #member .container .items-wrapper {
