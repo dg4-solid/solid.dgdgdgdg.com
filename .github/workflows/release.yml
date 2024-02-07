@@ -1,4 +1,4 @@
-name: Build and Release
+name: Tag and Release
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
         run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
 
   release:
-    needs: [prepare, build]
+    needs: [prepare]
     if: needs.prepare.outputs.version_changed == 'true'
     runs-on: ubuntu-latest
     steps:
