@@ -11,11 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        radio: resolve(
-          __dirname,
-          'project/radio/index.html',
-          '/src/pages/project/radio.tsx',
-        ),
+        radio: resolve(__dirname, 'project/radio/index.html'),
       },
     },
   },
