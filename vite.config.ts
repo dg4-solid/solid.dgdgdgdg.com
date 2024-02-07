@@ -7,6 +7,18 @@ import Pages from 'vite-plugin-pages';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), Pages({})],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        radio: resolve(
+          __dirname,
+          'project/radio/index.html',
+          '/src/pages/project/radio.tsx',
+        ),
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
