@@ -1,0 +1,202 @@
+header {
+  width: 100%;
+  display: flex;
+}
+header .outside {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  padding-left: 24px;
+  z-index: 1000;
+}
+@media (max-width: 640px) {
+  header .outside {
+    padding-left: 12px;
+  }
+}
+header .outside .logo {
+  width: 200px;
+  height: 57px;
+  -webkit-mask-image: url("/public/images/logotype.svg");
+          mask-image: url("/public/images/logotype.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #EBE6DD;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s;
+}
+@media (max-width: 640px) {
+  header .outside .logo {
+    width: 150px;
+    height: 43px;
+  }
+}
+header .outside .logo:hover {
+  background-color: #D40000;
+  transition: all 0.2s;
+}
+header .outside .logo.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+header .outside nav {
+  opacity: 1;
+  transition: all 0.3s;
+  margin-left: auto;
+}
+@media (max-width: 640px) {
+  header .outside nav {
+    display: none;
+  }
+}
+header .outside nav.is-open {
+  opacity: 0;
+  transition: all 0.3s;
+}
+header .outside nav * {
+  font-family: "Monaspace Krypton Var";
+  font-weight: lighter;
+}
+header .outside nav a {
+  color: #EBE6DD;
+  transition: all 0.2s;
+  padding: 16px;
+}
+header .outside nav a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
+header .outside .burger {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 640px) {
+  header .outside .burger {
+    width: 70px;
+    height: 70px;
+    margin-left: auto;
+  }
+}
+header .outside .burger:hover rect {
+  fill: #D40000;
+}
+header .outside .burger .line {
+  width: 35px;
+  height: 27px;
+  display: flex;
+  position: relative;
+}
+@media (max-width: 640px) {
+  header .outside .burger .line {
+    width: 24px;
+    height: 21px;
+  }
+}
+header .outside .burger rect {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  fill: #EBE6DD;
+  transition: all 0.2s;
+}
+header .outside .burger rect:nth-of-type(1) {
+  y: 0;
+}
+header .outside .burger rect:nth-of-type(2) {
+  visibility: visible;
+  opacity: 1;
+  y: 12px;
+}
+@media (max-width: 640px) {
+  header .outside .burger rect:nth-of-type(2) {
+    y: 8px;
+  }
+}
+header .outside .burger rect:nth-of-type(2).is-open {
+  visibility: hidden;
+  opacity: 0;
+}
+header .outside .burger rect:nth-of-type(3) {
+  y: 24px;
+}
+@media (max-width: 640px) {
+  header .outside .burger rect:nth-of-type(3) {
+    y: 16px;
+  }
+}
+header .outside .burger rect:nth-of-type(1).is-open, header .outside .burger rect:nth-of-type(3).is-open {
+  y: 12px;
+}
+@media (max-width: 640px) {
+  header .outside .burger rect:nth-of-type(1).is-open, header .outside .burger rect:nth-of-type(3).is-open {
+    y: 8px;
+  }
+}
+header .inside {
+  position: fixed;
+  width: 100%;
+  height: 100dvh;
+  top: -100dvh;
+  padding-top: 90px;
+  background-color: #0A0A0A;
+  z-index: 999;
+  transition: all 0.5s;
+}
+@media (max-width: 640px) {
+  header .inside {
+    padding-top: 70px;
+  }
+}
+header .inside.is-open {
+  top: 0;
+  transition: all 0.5s;
+}
+header .inside nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateY(-112px);
+}
+@media (max-width: 640px) {
+  header .inside nav {
+    gap: 16px;
+    transform: translateY(-160px);
+  }
+}
+header .inside nav * {
+  font-family: "Monaspace Krypton Var";
+  font-weight: normal;
+  font-size: 64px;
+}
+@media (max-width: 640px) {
+  header .inside nav * {
+    font-size: 40px;
+  }
+}
+header .inside nav a {
+  color: #EBE6DD;
+  transition: all 0.2s;
+}
+header .inside nav a:hover {
+  color: #D40000;
+  transition: all 0.2s;
+}
+header .inside #brandBar {
+  position: absolute;
+  bottom: 40px;
+  margin: 0;
+}
