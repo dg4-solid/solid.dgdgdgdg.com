@@ -170,8 +170,8 @@
   width: 256px;
   transition: 0.2s;
 }
-#project .items-wrapper .item.soon h3, #project .items-wrapper .item.soon .description {
-  color: rgba(235, 230, 221, 0.5);
+#project .items-wrapper .item.soon h3.genre, #project .items-wrapper .item.soon .description {
+  opacity: 0.5;
 }
 #project .items-wrapper .item .cover-image {
   width: 100%;
