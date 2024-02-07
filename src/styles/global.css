@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Zen Medium";
+  src: url("/public/fonts/ZenKakuGothicNew-Medium.ttf");
+}
+@font-face {
+  font-family: "Zen Black";
+  src: url("/public/fonts/ZenKakuGothicNew-Black.ttf");
+}
+@font-face {
+  font-family: "Monaspace Krypton Var";
+  weight: normal;
+  font-variations-settings: "wght" 500;
+  src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
+}
+@font-face {
+  font-family: "Monaspace Krypton Var";
+  weight: lighter;
+  font-variations-settings: "wght" 300;
+  src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
+}
+* {
+  color: #EBE6DD;
+  font-family: "Zen Medium", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+@media (max-width: 1024px) {
+  * {
+    scroll-padding-top: 120px;
+  }
+}
+@media (max-width: 640px) {
+  * {
+    scroll-padding-top: 80px;
+  }
+}
+
+body {
+  background-color: #141414;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border: none;
+}
+
+.container {
+  width: 660px;
+  max-width: 660px;
+  margin: 0 auto;
+  margin-top: 256px;
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 200px;
+  }
+}
+.container h2.title {
+  font-family: "Monaspace Krypton Var";
+  font-weight: normal;
+  font-size: 64px;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .container h2.title {
+    font-size: 32px;
+  }
+}
+.container h2.title + * {
+  margin-top: 56px;
+}
+@media (max-width: 640px) {
+  .container h2.title + * {
+    margin-top: 32px;
+  }
+}
+.container h3 {
+  font-family: "Monaspace Krypton Var", "Zen Black";
+  font-weight: bold;
+  font-size: 32px;
+}
+@media (max-width: 640px) {
+  .container h3 {
+    font-size: 24px;
+  }
+}
+.container h3 + * {
+  margin-top: 40px;
+}
+@media (max-width: 640px) {
+  .container h3 + * {
+    margin-top: 24px;
+  }
+}

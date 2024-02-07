@@ -1,6 +1,6 @@
-@import "@/styles/config/color.sass"
-@import "@/styles/config/media.sass"
-@import "@/styles/config/size.sass"
+@import "config/color"
+@import "config/media"
+@import "config/size"
 
 .shape
   width: fit-content
@@ -14,12 +14,12 @@
     width: 86vw
     height: calc(86vw / 2)
 
-    background-image: url("/images/fv.jpg")
+    background-image: url("/public/images/fv.jpg")
     background-size: cover
     background-position: center
     background-repeat: no-repeat
 
-    mask-image: url("/images/triangle.svg")
+    mask-image: url("/public/images/triangle.svg")
     mask-size: cover
     mask-position: center
     mask-repeat: no-repeat
@@ -28,7 +28,7 @@
       width: 95vw
       height: 95vw
 
-      mask-image: url("/images/square-diamond.svg")
+      mask-image: url("/public/images/square-diamond.svg")
 
   span.title
     width: fit-content
@@ -62,7 +62,7 @@
       width: 582px
       aspect-ratio: 7 / 2
 
-      mask-image: url("/images/logotype.svg")
+      mask-image: url("/public/images/logotype.svg")
       mask-size: contain
       mask-repeat: no-repeat
       mask-position: center
@@ -171,7 +171,7 @@
         top: 0.45em
 
         background-color: $red
-        mask-image: url("/images/carret-triangle.svg")
+        mask-image: url("/public/images/carret-triangle.svg")
         mask-size: contain
         mask-position: center
         mask-repeat: no-repeat
@@ -179,7 +179,7 @@
         text-decoration: underline
 
   #radio .cover-image
-    background-image: url("/images/radio-cover.png")
+    background-image: url("/public/images/radio-cover.png")
 
 #endview
   margin-top: 296px

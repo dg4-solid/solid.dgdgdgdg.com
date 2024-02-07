@@ -1,29 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="icon" href="/public/images/favicon.ico" />
 
-    <meta property="og:title" content="dgdgdgdg Solid Point" />
+    <meta property="og:title" content="ラジオのタイトルを入力 | dgdgdgdg Solid Point" />
     <meta property="og:site_name" content="dgdgdgdg Solid Point" />
-    <meta property="og:url" content="https://www.solid.dgdgdgdg.com" />
-    <meta
-      property="og:description"
-      content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。"
-    />
+    <meta property="og:url" content="https://www.solid.dgdgdgdg.com/project/radio" />
+    <meta property="og:description" content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://www.solid.dgdgdgdg.com/images/ogp.jpg"
-    />
+    <meta property="og:image" content="https://www.solid.dgdgdgdg.com/public/images/radio-cover.png" />
 
-    <title>dgdgdgdg Solid Point</title>
+    <title>ラジオのタイトルを入力 | dgdgdgdg Solid Point</title>
+
+    <link rel="stylesheet" href="/src/styles/_reset.css" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel" src="/src/components/brandBar.jsx" defer></script>
+    <link rel="stylesheet" href="/src/styles/components/brandBar.css" />
+
+    <script type="text/babel" src="/src/components/button.jsx" defer></script>
+    <link rel="stylesheet" href="/src/styles/components/button.css" />
+
+    <script type="text/babel" src="/project/radio/index.jsx" defer></script>
+    <link rel="stylesheet" href="/src/styles/project.css" />
   </head>
+
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/pages/project/radio.tsx"></script>
+    <main id="radioPage"></main>
   </body>
 </html>

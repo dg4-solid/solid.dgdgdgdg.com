@@ -1,0 +1,225 @@
+.shape {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+.shape .bg-graphic {
+  width: 86vw;
+  height: 43vw;
+  background-image: url("/public/images/fv.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/public/images/triangle.svg");
+          mask-image: url("/public/images/triangle.svg");
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+@media (max-width: 640px) {
+  .shape .bg-graphic {
+    width: 95vw;
+    height: 95vw;
+    -webkit-mask-image: url("/public/images/square-diamond.svg");
+            mask-image: url("/public/images/square-diamond.svg");
+  }
+}
+.shape span.title {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  margin: auto;
+}
+@media (max-width: 640px) {
+  .shape span.title {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+}
+.shape span.title p.slogan {
+  text-align: right;
+  padding-right: 34px;
+  margin-bottom: -32px;
+}
+@media (max-width: 1024px) {
+  .shape span.title p.slogan {
+    padding-right: 24px;
+    margin-bottom: -24px;
+  }
+}
+@media (max-width: 640px) {
+  .shape span.title p.slogan {
+    padding-right: 6vw;
+    margin-bottom: -16px;
+  }
+}
+.shape span.title h1#logotype {
+  width: 582px;
+  aspect-ratio: 7/2;
+  -webkit-mask-image: url("/public/images/logotype.svg");
+          mask-image: url("/public/images/logotype.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #EBE6DD;
+}
+@media (max-width: 1024px) {
+  .shape span.title h1#logotype {
+    width: 400px;
+  }
+}
+@media (max-width: 640px) {
+  .shape span.title h1#logotype {
+    display: block;
+    width: 100%;
+  }
+}
+
+#about .overview .text {
+  text-align: center;
+  margin-top: 32px;
+}
+@media (max-width: 640px) {
+  #about .overview .text {
+    text-align: left;
+  }
+}
+@media (max-width: 640px) {
+  #about .overview .text br {
+    display: none;
+  }
+}
+#about .meaning .note {
+  text-align: center;
+}
+@media (max-width: 640px) {
+  #about .meaning .note {
+    text-align: left;
+  }
+}
+#about .meaning .items-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 32px;
+    margin-top: 48px;
+  }
+}
+#about .meaning .items-wrapper .item {
+  width: 300px;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item {
+    width: 100%;
+  }
+}
+#about .meaning .items-wrapper .item img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item img {
+    width: 128px;
+    height: 128px;
+  }
+}
+#about .meaning .items-wrapper .item .caption {
+  margin-top: 32px;
+}
+@media (max-width: 640px) {
+  #about .meaning .items-wrapper .item .caption {
+    margin-top: 16px;
+  }
+}
+
+#project .items-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  #project .items-wrapper {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column;
+    gap: 56px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+#project .items-wrapper .item {
+  width: 256px;
+  transition: 0.2s;
+}
+#project .items-wrapper .item.soon h3, #project .items-wrapper .item.soon .description {
+  color: rgba(235, 230, 221, 0.5);
+}
+#project .items-wrapper .item .cover-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0A0A0A;
+  margin-top: 16px;
+}
+#project .items-wrapper .item .description, #project .items-wrapper .item .collaborator, #project .items-wrapper .item .more {
+  margin-top: 16px;
+}
+#project .items-wrapper .item .more {
+  color: #D40000;
+  display: inline-block;
+  position: relative;
+}
+#project .items-wrapper .item .more::after {
+  content: "";
+  display: block;
+  width: 0.6em;
+  height: 0.8em;
+  position: absolute;
+  right: -1em;
+  top: 0.45em;
+  background-color: #D40000;
+  -webkit-mask-image: url("/public/images/carret-triangle.svg");
+          mask-image: url("/public/images/carret-triangle.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+#project .items-wrapper .item .more:hover {
+  text-decoration: underline;
+}
+#project .items-wrapper #radio .cover-image {
+  background-image: url("/public/images/radio-cover.png");
+}
+
+#endview {
+  margin-top: 296px;
+}
+@media (max-width: 1024px) {
+  #endview {
+    margin-top: 200px;
+  }
+}
