@@ -1,6 +1,6 @@
-@import "@/styles/config/color.sass"
-@import "@/styles/config/media.sass"
-@import "@/styles/config/size.sass"
+@import "config/color"
+@import "config/media"
+@import "config/size"
 
 #article-header
   a.back
@@ -30,7 +30,7 @@
       top: calc(0.31em + 10px)
 
       background-color: $white
-      mask-image: url("/images/carret-triangle.svg")
+      mask-image: url("/public/images/carret-triangle.svg")
       mask-size: contain
       mask-position: center
       mask-repeat: no-repeat
@@ -48,7 +48,8 @@
         transition: 0.3s
 
   .container
-    margin-top: 80px
+    @include sp
+      margin-top: 80px
     h1
       font-family: "Monaspace Krypton Var"
       font-weight: normal
@@ -118,10 +119,10 @@
           transition: 0.2s
 
   #tusk .profile-image
-    background-image: url("/images/member/tusk.png")
+    background-image: url("/public/images/member/tusk.png")
 
   #dgdgdgdg .profile-image
-    background-image: url("/images/member/dgdgdgdg.png")
+    background-image: url("/public/images/member/dgdgdgdg.png")
 
 #brandBar
   margin-top: 200px
