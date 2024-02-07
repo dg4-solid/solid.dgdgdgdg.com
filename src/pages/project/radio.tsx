@@ -36,6 +36,11 @@ const Radio = () => {
       <section id='about'>
         <div className='container'>
           <h2 className='title'>About</h2>
+          <iframe
+            src='https://www.youtube.com/embed/videoseries?list=UURz6N_gsMHfNhvLOGMEQtjg'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            allowFullScreen
+          ></iframe>
           <p className='text'>
             ゆるく雑談するラジオ
             <br />
@@ -93,14 +98,14 @@ const Radio = () => {
                   <img src='/images/icon/misskey.svg' alt='' />
                 </a>
                 <a
-                  href='https://instagram.com/dg4_design'
+                  href='https://www.instagram.com/dg4_design'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   <img src='/images/icon/instagram.svg' alt='' />
                 </a>
                 <a
-                  href='https://bsky.app/dgdgdgdg.com'
+                  href='https://bsky.app/profile/dgdgdgdg.com'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
