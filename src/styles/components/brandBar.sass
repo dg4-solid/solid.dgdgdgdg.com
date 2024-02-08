@@ -1,5 +1,5 @@
-@import "../config/color"
-@import "../config/media"
+@use "../config/color"
+@use "../config/media"
 
 #brandBar
   display: flex
@@ -10,7 +10,7 @@
   padding: 0 7vw
   margin: 80px 0
 
-  @include sp
+  @include media.sp
     flex-direction: column-reverse
     gap: 16px
     padding: 0 2.5vw
@@ -23,16 +23,16 @@
     display: flex
     gap: 40px
 
-    @include sp
+    @include media.sp
       flex-wrap: wrap
       gap: 16px 40px
       justify-content: center
 
     a
-      color: $white
+      color: color.$white
       text-decoration: underline
       transition: all 0.2s
 
       &:hover
-        color: $red
+        color: color.$red
         transition: all 0.2s
