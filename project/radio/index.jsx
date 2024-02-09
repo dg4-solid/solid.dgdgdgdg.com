@@ -100,7 +100,7 @@ const Radio = () => {
         </div>
       </section>
 
-      <BrandBar type="footer" />
+      <BrandBar />
     </div>
   );
 };
