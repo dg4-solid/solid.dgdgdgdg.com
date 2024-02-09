@@ -21,11 +21,11 @@ const Header = ({ displayLogo }) => {
   return (
     <header>
       <div className="outside">
-        <a href="#" className={`logo ${logoState}`} onClick={menuReset} />
+        <a href="/#" className={`logo ${logoState}`} onClick={menuReset} />
         <nav className={openState}>
-          <a href="#about">About</a>
-          <a href="#project">Project</a>
-          <a href="mailto:solid@dgdgdgdg.com">Contact</a>
+          <a href="/#about">About</a>
+          <a href="/#project">Project</a>
+          <a href="/#contactForm">Contact</a>
         </nav>
         <div className="burger clickable" onClick={menuFunction}>
           <svg className="line">
@@ -38,13 +38,13 @@ const Header = ({ displayLogo }) => {
 
       <div className={`inside ${openState}`}>
         <nav>
-          <a href="#about" onClick={menuReset}>
+          <a href="/#about" onClick={menuReset}>
             About
           </a>
-          <a href="#project" onClick={menuReset}>
+          <a href="/#project" onClick={menuReset}>
             Project
           </a>
-          <a href="mailto:solid@dgdgdgdg.com" onClick={menuReset}>
+          <a href="/#contactForm" onClick={menuReset}>
             Contact
           </a>
         </nav>
