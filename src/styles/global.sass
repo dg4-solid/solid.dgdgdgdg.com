@@ -1,5 +1,5 @@
-@import "config/color"
-@import "config/media"
+@use "config/color"
+@use "config/media"
 
 @font-face
   font-family: "Zen Medium"
@@ -22,7 +22,7 @@
   src: url("/public/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf")
 
 *
-  color: $white
+  color: color.$white
 
   font-family: "Zen Medium", sans-serif
   font-size: 16px
@@ -31,14 +31,14 @@
   scroll-behavior: smooth
   scroll-padding-top: 200px
 
-  @include tab
+  @include media.tab
     scroll-padding-top: 120px
 
-  @include sp
+  @include media.sp
     scroll-padding-top: 80px
 
 body
-  background-color: $black
+  background-color: color.$black
 
 iframe
   aspect-ratio: 16 / 9
@@ -52,7 +52,7 @@ iframe
   margin: 0 auto
   margin-top: 256px
 
-  @include tab
+  @include media.tab
     width: 100%
     padding: 0 10px
     margin-top: 200px
@@ -62,22 +62,22 @@ iframe
     font-weight: normal
     font-size: 64px
     text-align: center
-    @include sp
+    @include media.sp
       font-size: 32px
 
     & + *
       margin-top: 56px
-      @include sp
+      @include media.sp
         margin-top: 32px
 
   h3
     font-family: "Monaspace Krypton Var", "Zen Black"
     font-weight: bold
     font-size: 32px
-    @include sp
+    @include media.sp
       font-size: 24px
 
     & + *
       margin-top: 40px
-      @include sp
+      @include media.sp
         margin-top: 24px

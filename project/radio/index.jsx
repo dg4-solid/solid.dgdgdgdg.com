@@ -25,7 +25,6 @@ const Radio = () => {
           </p>
           <div className="button-wrapper">
             <Button href="https://youtube.com/@EtRt" text="YouTube Channel" external={true} />
-            <Button href="https://www.radio.dgdgdgdg.com/" text="おたよりフォーム" external={true} />
           </div>
         </div>
       </section>
@@ -66,6 +65,38 @@ const Radio = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="contactForm">
+        <div className="container">
+          <h2 className="title">
+            Contact<span> to ラジオのタイトルを入力</span>
+          </h2>
+          <Form
+            destination={{
+              googleFormLink: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSc_O7Ald3TqkgNkkwBnaHo-W3oq5BKo_UUiE38we38UL8nmJA/formResponse",
+              inputNames: {
+                name: "entry.183923869",
+                email: "emailAddress",
+                select: "entry.1363996325",
+                textarea: "entry.1860530349",
+              },
+              autoCompletes: [
+                {
+                  name: "依頼",
+                  message: "依頼内容, 趣旨・目的, 要望など",
+                },
+                {
+                  name: "おたより: ふつうのおたより",
+                  message: "おたよりの内容",
+                },
+                {
+                  name: "その他",
+                },
+              ],
+            }}
+          />
         </div>
       </section>
 

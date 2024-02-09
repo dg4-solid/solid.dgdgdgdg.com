@@ -1,6 +1,6 @@
-@import "config/color"
-@import "config/media"
-@import "config/size"
+@use "config/color"
+@use "config/media"
+@use "config/size"
 
 .shape
   width: fit-content
@@ -8,7 +8,7 @@
   position: relative
 
   margin: 0 auto
-  margin-top: $header-height-pc
+  margin-top: size.$header-height-pc
 
   .bg-graphic
     width: 86vw
@@ -24,7 +24,7 @@
     mask-position: center
     mask-repeat: no-repeat
 
-    @include sp
+    @include media.sp
       width: 95vw
       height: 95vw
 
@@ -40,7 +40,7 @@
 
     margin: auto
 
-    @include sp
+    @include media.sp
       width: 100%
       display: block
       margin: 0
@@ -50,11 +50,11 @@
       padding-right: 34px
       margin-bottom: -32px
 
-      @include tab
+      @include media.tab
         padding-right: 24px
         margin-bottom: -24px
 
-      @include sp
+      @include media.sp
         padding-right: 6vw
         margin-bottom: -16px
 
@@ -67,12 +67,12 @@
       mask-repeat: no-repeat
       mask-position: center
 
-      background-color: $white
+      background-color: color.$white
 
-      @include tab
+      @include media.tab
         width: 400px
 
-      @include sp
+      @include media.sp
         display: block
         width: 100%
 
@@ -81,18 +81,18 @@
     text-align: center
     margin-top: 32px
 
-    @include sp
+    @include media.sp
       text-align: left
 
     br
-      @include sp
+      @include media.sp
         display: none
 
   .meaning
     .note
       text-align: center
 
-      @include sp
+      @include media.sp
         text-align: left
 
     .items-wrapper
@@ -101,7 +101,7 @@
 
       margin-top: 56px
 
-      @include sp
+      @include media.sp
         flex-direction: column
         gap: 40px
         padding: 0 32px
@@ -109,7 +109,7 @@
 
       .item
         width: 300px
-        @include sp
+        @include media.sp
           width: 100%
 
         img
@@ -117,19 +117,19 @@
           width: 200px
           height: 200px
           margin: 0 auto
-          @include sp
+          @include media.sp
             width: 128px
             height: 128px
 
         .caption
           margin-top: 32px
-          @include sp
+          @include media.sp
             margin-top: 16px
 
 #project .items-wrapper
   display: flex
   justify-content: space-between
-  @include sp
+  @include media.sp
     width: fit-content
     flex-direction: column
     gap: 56px
@@ -149,7 +149,7 @@
       background-size: cover
       background-position: center
       background-repeat: no-repeat
-      background-color: $black-darker
+      background-color: color.$black-darker
 
       margin-top: 16px
 
@@ -157,7 +157,7 @@
       margin-top: 16px
 
     .more
-      color: $red
+      color: color.$red
       display: inline-block
       position: relative
       &::after
@@ -170,7 +170,7 @@
         right: -1em
         top: 0.45em
 
-        background-color: $red
+        background-color: color.$red
         mask-image: url("/public/images/carret-triangle.svg")
         mask-size: contain
         mask-position: center
@@ -183,5 +183,5 @@
 
 #endview
   margin-top: 296px
-  @include tab
+  @include media.tab
     margin-top: 200px

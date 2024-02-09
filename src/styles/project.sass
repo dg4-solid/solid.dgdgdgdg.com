@@ -1,6 +1,6 @@
-@import "config/color"
-@import "config/media"
-@import "config/size"
+@use "config/color"
+@use "config/media"
+@use "config/size"
 
 #article-header
   a.back
@@ -14,7 +14,7 @@
     font-family: "Monaspace Krypton Var"
 
     transition: 0.3s
-    @include sp
+    @include media.sp
       font-size: 16px
       top: 14px
       left: 28px
@@ -29,7 +29,7 @@
       left: -1.2em
       top: calc(0.31em + 10px)
 
-      background-color: $white
+      background-color: color.$white
       mask-image: url("/public/images/carret-triangle.svg")
       mask-size: contain
       mask-position: center
@@ -40,21 +40,21 @@
       transition: 0.3s
 
     &:hover
-      color: $red
+      color: color.$red
       transition: 0.3s
 
       &::before
-        background-color: $red
+        background-color: color.$red
         transition: 0.3s
 
   .container
-    @include sp
+    @include media.sp
       margin-top: 80px
     h1
       font-family: "Monaspace Krypton Var"
       font-weight: normal
       font-size: 64px
-      @include sp
+      @include media.sp
         font-size: 32px
     img
       aspect-ratio: 8 / 5
@@ -80,13 +80,13 @@
 #member .container .items-wrapper
   display: flex
   justify-content: space-between
-  @include sp
+  @include media.sp
     gap: 32px
     margin-right: auto
     margin-left: auto
   .item
     width: 256px
-    @include sp
+    @include media.sp
       width: 100%
     .profile-image
       width: 100%
@@ -119,7 +119,7 @@
         height: 48px
 
         transition: 0.2s
-        @include sp
+        @include media.sp
           width: 40px
           height: 40px
         &:hover
