@@ -1,6 +1,6 @@
-@import "../config/color"
-@import "../config/media"
-@import "../config/size"
+@use "../config/color"
+@use "../config/media"
+@use "../config/size"
 
 header
   width: 100%
@@ -19,7 +19,7 @@ header
 
     z-index: 1000
 
-    @include sp
+    @include media.sp
       padding-left: 12px
 
     .logo
@@ -31,18 +31,18 @@ header
       mask-repeat: no-repeat
       mask-position: center
 
-      background-color: $white
+      background-color: color.$white
 
       opacity: 1
       visibility: visible
       transition: all 0.2s
 
-      @include sp
+      @include media.sp
         width: 150px
         height: 43px
 
       &:hover
-        background-color: $red
+        background-color: color.$red
         transition: all 0.2s
 
       &.is-hidden
@@ -56,7 +56,7 @@ header
 
       margin-left: auto
 
-      @include sp
+      @include media.sp
         display: none
 
       &.is-open
@@ -68,29 +68,29 @@ header
         font-weight: lighter
 
       a
-        color: $white
+        color: color.$white
         transition: all 0.2s
 
         padding: 16px
 
         &:hover
-          color: $red
+          color: color.$red
           transition: all 0.2s
 
     .burger
-      width: $header-height-pc
-      height: $header-height-pc
+      width: size.$header-height-pc
+      height: size.$header-height-pc
 
       display: grid
       place-items: center
 
-      @include sp
-        width: $header-height-sp
-        height: $header-height-sp
+      @include media.sp
+        width: size.$header-height-sp
+        height: size.$header-height-sp
         margin-left: auto
 
       &:hover rect
-        fill: $red
+        fill: color.$red
 
       .line
         width: 35px
@@ -100,7 +100,7 @@ header
 
         position: relative
 
-        @include sp
+        @include media.sp
           width: 24px
           height: 21px
 
@@ -110,7 +110,7 @@ header
 
         position: absolute
 
-        fill: $white
+        fill: color.$white
         transition: all 0.2s
 
         &:nth-of-type(1)
@@ -120,7 +120,7 @@ header
           visibility: visible
           opacity: 1
           y: 12px
-          @include sp
+          @include media.sp
             y: 8px
 
           &.is-open
@@ -129,13 +129,13 @@ header
 
         &:nth-of-type(3)
           y: 24px
-          @include sp
+          @include media.sp
             y: 16px
 
         &:nth-of-type(1), &:nth-of-type(3)
           &.is-open
             y: 12px
-            @include sp
+            @include media.sp
               y: 8px
 
   .inside
@@ -143,15 +143,15 @@ header
     width: 100%
     height: 100dvh
     top: -100dvh
-    padding-top: $header-height-pc
-    background-color: $black-darker
+    padding-top: size.$header-height-pc
+    background-color: color.$black-darker
 
     z-index: 999
 
     transition: all 0.5s
 
-    @include sp
-      padding-top: $header-height-sp
+    @include media.sp
+      padding-top: size.$header-height-sp
 
     &.is-open
       top: 0
@@ -168,7 +168,7 @@ header
 
       transform: translateY(-112px)
 
-      @include sp
+      @include media.sp
         gap: 16px
         transform: translateY(-160px)
 
@@ -177,15 +177,15 @@ header
         font-weight: normal
         font-size: 64px
 
-        @include sp
+        @include media.sp
           font-size: 40px
 
       a
-        color: $white
+        color: color.$white
         transition: all 0.2s
 
         &:hover
-          color: $red
+          color: color.$red
           transition: all 0.2s
 
     #brandBar

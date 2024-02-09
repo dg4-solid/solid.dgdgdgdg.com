@@ -85,6 +85,34 @@ const Top = () => {
           </div>
         </div>
       </section>
+
+      <section id="contactForm">
+        <div className="container">
+          <h2 className="title">
+            Contact<span> to Solid Point</span>
+          </h2>
+          <Form
+            destination={{
+              googleFormLink: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe9M-6DYyXZuSSf8gm2S_JvT3yQDsMrHyJWekkBM4CM_QKqkg/formResponse",
+              inputNames: {
+                name: "entry.1803120711",
+                email: "entry.506070991",
+                select: "entry.174843426",
+                textarea: "entry.1457978395",
+              },
+              autoCompletes: [
+                {
+                  name: "依頼",
+                  message: "依頼内容, 趣旨・目的, 要望など",
+                },
+                {
+                  name: "その他",
+                },
+              ],
+            }}
+          />
+        </div>
+      </section>
       <section id="endview" className="shape">
         <div className="bg-graphic"></div>
       </section>
