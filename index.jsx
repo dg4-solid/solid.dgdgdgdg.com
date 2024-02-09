@@ -116,7 +116,7 @@ const Top = () => {
       <section id="endview" className="shape">
         <div className="bg-graphic"></div>
       </section>
-      <BrandBar type="footer" />
+      <BrandBar />
     </main>
   );
 };
