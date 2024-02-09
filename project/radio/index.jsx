@@ -76,12 +76,12 @@ const Radio = () => {
           </h2>
           <Form
             destination={{
-              googleFormLink: "https://",
+              googleFormLink: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSc_O7Ald3TqkgNkkwBnaHo-W3oq5BKo_UUiE38we38UL8nmJA/formResponse",
               inputNames: {
-                name: "entry.1726417427",
-                email: "entry.1726417427",
-                select: "entry.1726417427",
-                textarea: "entry.1726417427",
+                name: "entry.183923869",
+                email: "emailAddress",
+                select: "entry.1363996325",
+                textarea: "entry.1860530349",
               },
               autoCompletes: [
                 {
