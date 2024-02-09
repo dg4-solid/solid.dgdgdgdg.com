@@ -1,4 +1,4 @@
-a.component-button {
+.component-button {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
@@ -12,7 +12,7 @@ a.component-button {
   margin: 0 auto;
   transition: 0.2s;
 }
-a.component-button:hover {
+.component-button:hover {
   background-color: rgba(235, 230, 221, 0.1);
   transition: 0.2s;
 }

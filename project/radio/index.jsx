@@ -69,6 +69,38 @@ const Radio = () => {
         </div>
       </section>
 
+      <section id="contactForm">
+        <div className="container">
+          <h2 className="title">
+            Contact<span> to ラジオのタイトルを入力</span>
+          </h2>
+          <Form
+            destination={{
+              googleFormLink: "https://",
+              inputNames: {
+                name: "entry.1726417427",
+                email: "entry.1726417427",
+                select: "entry.1726417427",
+                textarea: "entry.1726417427",
+              },
+              autoCompletes: [
+                {
+                  name: "依頼",
+                  message: "依頼内容, 趣旨・目的, 要望など",
+                },
+                {
+                  name: "おたより: ふつうのおたより",
+                  message: "おたよりの内容",
+                },
+                {
+                  name: "その他",
+                },
+              ],
+            }}
+          />
+        </div>
+      </section>
+
       <BrandBar type="footer" />
     </div>
   );
