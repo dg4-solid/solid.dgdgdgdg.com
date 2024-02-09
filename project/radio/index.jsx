@@ -25,7 +25,6 @@ const Radio = () => {
           </p>
           <div className="button-wrapper">
             <Button href="https://youtube.com/@EtRt" text="YouTube Channel" external={true} />
-            <Button href="https://www.radio.dgdgdgdg.com/" text="おたよりフォーム" external={true} />
           </div>
         </div>
       </section>
