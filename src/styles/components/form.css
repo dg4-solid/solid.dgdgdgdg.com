@@ -49,21 +49,9 @@ form .formChunk input::placeholder, form .formChunk input::-webkit-input-placeho
   color: rgba(235, 230, 221, 0.5);
 }
 form .formChunk select {
-  position: relative;
-}
-form .formChunk select::after {
-  content: "";
-  display: block;
-  width: 1em;
-  height: 1em;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  pointer-events: none;
-  background-image: url("/public/images/carret-triangle.svg");
-  background-size: contain;
-  background-position: center;
+  background-image: url("/public/images/carret-triangle-bottom.svg");
+  background-size: 0.8em 0.8em;
+  background-position: center right 16px;
   background-repeat: no-repeat;
 }
 form .formChunk textarea {
@@ -88,6 +76,7 @@ form .formChunk:has(input[type=checkbox]) input[type=checkbox] {
   margin-right: 10px;
   background-color: #141414;
   position: relative;
+  cursor: pointer;
 }
 form .formChunk:has(input[type=checkbox]) input[type=checkbox]::before {
   content: "";
@@ -112,4 +101,8 @@ form .formChunk:has(input[type=checkbox]) label {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0;
+  cursor: pointer;
+}
+form .formChunk button[type=submit].component-button {
+  cursor: pointer;
 }
