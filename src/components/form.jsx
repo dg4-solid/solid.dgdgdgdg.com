@@ -46,14 +46,14 @@ const Form = ({ destination: { googleFormLink, inputNames, autoCompletes } }) =>
           お名前
           <span className="red">*</span>
         </label>
-        <input type="text" name={inputNames.name} id="inputName" placeholder="お名前" required />
+        <input type="text" name={inputNames.name} id="inputName" required />
       </div>
       <div className="formChunk">
         <label htmlFor="inputEmail">
           メールアドレス
           <span className="red">*</span>
         </label>
-        <input type="email" name={inputNames.email} id="inputEmail" placeholder="メールアドレス" required />
+        <input type="email" name={inputNames.email} id="inputEmail" required />
       </div>
       <div className="formChunk">
         <label htmlFor="selectLetter">
@@ -61,9 +61,7 @@ const Form = ({ destination: { googleFormLink, inputNames, autoCompletes } }) =>
           <span className="red">*</span>
         </label>
         <select name="selectLetter" id="selectLetter" required onChange={handleSelectChange}>
-          <option value="" disabled selected>
-            お問い合わせ内容を選択
-          </option>
+          <option value="" disabled selected />
           {autoCompletes.map((autoComplete, index) => (
             <option key={index} value={autoComplete.name}>
               {autoComplete.name}
