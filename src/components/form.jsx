@@ -42,20 +42,6 @@ const Form = ({ destination: { googleFormLink, inputNames, autoCompletes } }) =>
   return (
     <form ref={formRef} id="form" onSubmit={handleSubmit}>
       <div className="formChunk">
-        <label htmlFor="inputName">
-          お名前
-          <span className="red">*</span>
-        </label>
-        <input type="text" name={inputNames.name} id="inputName" required />
-      </div>
-      <div className="formChunk">
-        <label htmlFor="inputEmail">
-          メールアドレス
-          <span className="red">*</span>
-        </label>
-        <input type="email" name={inputNames.email} id="inputEmail" required />
-      </div>
-      <div className="formChunk">
         <label htmlFor="selectLetter">
           お問い合わせ内容
           <span className="red">*</span>
@@ -69,6 +55,20 @@ const Form = ({ destination: { googleFormLink, inputNames, autoCompletes } }) =>
           ))}
         </select>
         <input type="hidden" name={inputNames.select} value={selectedAutoComplete} className="select-letter"></input>
+      </div>
+      <div className="formChunk">
+        <label htmlFor="inputName">
+          {selectedAutoComplete.includes("おたより") ? "ラジオネーム" : "お名前"}
+          <span className="red">*</span>
+        </label>
+        <input type="text" name={inputNames.name} id="inputName" required />
+      </div>
+      <div className="formChunk">
+        <label htmlFor="inputEmail">
+          メールアドレス
+          <span className="red">*</span>
+        </label>
+        <input type="email" name={inputNames.email} id="inputEmail" required />
       </div>
       <div className="formChunk">
         <label htmlFor="textarea">
