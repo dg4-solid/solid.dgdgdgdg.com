@@ -45,9 +45,6 @@ form .formChunk input, form .formChunk select, form .formChunk textarea {
     width: 100%;
   }
 }
-form .formChunk input::placeholder, form .formChunk input::-webkit-input-placeholder, form .formChunk select::placeholder, form .formChunk select::-webkit-input-placeholder, form .formChunk textarea::placeholder, form .formChunk textarea::-webkit-input-placeholder {
-  color: rgba(235, 230, 221, 0.5);
-}
 form .formChunk select {
   background-image: url("/public/images/carret-triangle-bottom.svg");
   background-size: 0.8em 0.8em;
