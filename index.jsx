@@ -74,7 +74,7 @@ const Top = () => {
                 <br />
                 「ラジオのタイトルを入力」
               </p>
-              <p className="collaborator">Collaborator: Tusk</p>
+              <p className="mate">Mate: Tusk</p>
               <p className="more">さらに詳しく</p>
             </a>
             <div id="vision" className="item soon">
