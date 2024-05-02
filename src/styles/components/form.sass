@@ -18,6 +18,7 @@ form .formChunk
     gap: 0
   label
     display: block
+    min-width: 200px
     width: 200px
     user-select: none
 
@@ -37,22 +38,42 @@ form .formChunk
     @include media.sp
       width: 100%
 
-  select
-    background-image: url("/public/images/carret-triangle-bottom.svg")
-    background-size: .8em .8em
-    background-position: center right 16px
-    background-repeat: no-repeat
+  .radio-group
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+
+  input[type="radio"]
+    display: none
+
+    + label
+      display: inline-block
+      min-width: unset
+      width: fit-content
+      height: 48px
+      line-height: 42px
+      border: 2px solid rgba(color.$white, 0.5)
+      cursor: pointer
+      padding: 0px 24px
+      border-radius: 50px
+
+      &:hover
+        border-color: color.$red
+
+    &:checked + label
+      border-color: color.$red
+      background-color: rgba(color.$red, 0.5)
 
   textarea
     height: calc(8 * 1.6em + 16px + 4px)
 
   &:has(input[type="checkbox"])
     display: flex
+    min-width: unset
     width: fit-content
     margin: 0 auto
     margin-top: 20px
-    @include media.sp
-      flex-direction: row
+    gap: 0
 
     input[type="checkbox"]
       aspect-ratio: 1 / 1
@@ -65,6 +86,9 @@ form .formChunk
       position: relative
 
       cursor: pointer
+
+      &:hover
+        border-color: color.$red
 
       &::before
         content: ""
@@ -81,13 +105,18 @@ form .formChunk
 
         background-color: color.$red
 
-      &:checked::before
-        width: 1em
-        height: 1em
-        transition: 0.1s
+      &:checked
+        border-color: color.$red
+        background-color: rgba(color.$red, 0.5)
+
+        &::before
+          width: 1em
+          height: 1em
+          transition: 0.1s
 
     label
       line-height: 32px
+      min-width: unset
       width: fit-content
       padding: 0
 
