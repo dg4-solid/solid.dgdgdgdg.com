@@ -20,6 +20,7 @@ form .formChunk {
 }
 form .formChunk label {
   display: block;
+  min-width: 200px;
   width: 200px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -45,26 +46,44 @@ form .formChunk input, form .formChunk select, form .formChunk textarea {
     width: 100%;
   }
 }
-form .formChunk select {
-  background-image: url("/public/images/carret-triangle-bottom.svg");
-  background-size: 0.8em 0.8em;
-  background-position: center right 16px;
-  background-repeat: no-repeat;
+form .formChunk .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+form .formChunk input[type=radio] {
+  display: none;
+}
+form .formChunk input[type=radio] + label {
+  display: inline-block;
+  min-width: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 48px;
+  line-height: 42px;
+  border: 2px solid rgba(235, 230, 221, 0.5);
+  cursor: pointer;
+  padding: 0px 24px;
+  border-radius: 50px;
+}
+form .formChunk input[type=radio] + label:hover {
+  border-color: #D40000;
+}
+form .formChunk input[type=radio]:checked + label {
+  border-color: #D40000;
+  background-color: rgba(212, 0, 0, 0.5);
 }
 form .formChunk textarea {
   height: calc(12.8em + 16px + 4px);
 }
 form .formChunk:has(input[type=checkbox]) {
   display: flex;
+  min-width: unset;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   margin-top: 20px;
-}
-@media (max-width: 640px) {
-  form .formChunk:has(input[type=checkbox]) {
-    flex-direction: row;
-  }
+  gap: 0;
 }
 form .formChunk:has(input[type=checkbox]) input[type=checkbox] {
   aspect-ratio: 1/1;
@@ -74,6 +93,9 @@ form .formChunk:has(input[type=checkbox]) input[type=checkbox] {
   background-color: #141414;
   position: relative;
   cursor: pointer;
+}
+form .formChunk:has(input[type=checkbox]) input[type=checkbox]:hover {
+  border-color: #D40000;
 }
 form .formChunk:has(input[type=checkbox]) input[type=checkbox]::before {
   content: "";
@@ -88,6 +110,10 @@ form .formChunk:has(input[type=checkbox]) input[type=checkbox]::before {
   pointer-events: none;
   background-color: #D40000;
 }
+form .formChunk:has(input[type=checkbox]) input[type=checkbox]:checked {
+  border-color: #D40000;
+  background-color: rgba(212, 0, 0, 0.5);
+}
 form .formChunk:has(input[type=checkbox]) input[type=checkbox]:checked::before {
   width: 1em;
   height: 1em;
@@ -95,6 +121,7 @@ form .formChunk:has(input[type=checkbox]) input[type=checkbox]:checked::before {
 }
 form .formChunk:has(input[type=checkbox]) label {
   line-height: 32px;
+  min-width: unset;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0;
