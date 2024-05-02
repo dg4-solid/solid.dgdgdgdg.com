@@ -46,14 +46,14 @@ const Form = ({ destination: { googleFormLink, inputNames, autoCompletes } }) =>
           お問い合わせ内容
           <span className="red">*</span>
         </label>
-        <select name="selectLetter" id="selectLetter" required onChange={handleSelectChange}>
-          <option value="" disabled selected />
+        <div className="radio-group">
           {autoCompletes.map((autoComplete, index) => (
-            <option key={index} value={autoComplete.name}>
-              {autoComplete.name}
-            </option>
+            <div key={index}>
+              <input type="radio" name={inputNames.select} id={autoComplete.name} value={autoComplete.name} required onChange={handleSelectChange} />
+              <label htmlFor={autoComplete.name}>{autoComplete.name}</label>
+            </div>
           ))}
-        </select>
+        </div>
         <input type="hidden" name={inputNames.select} value={selectedAutoComplete} className="select-letter"></input>
       </div>
       <div className="formChunk">
