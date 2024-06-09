@@ -74,14 +74,16 @@ const Top = () => {
                 <br />
                 「ラジオのタイトルを入力」
               </p>
-              <p className="mate">Mate: Tusk</p>
+              <p className="partner">Partner: Tusk</p>
               <p className="more">さらに詳しく</p>
             </a>
-            <div id="vision" className="item soon">
+            <a href="/project/visual" id="visual" className="item">
               <h3 className="genre">Visual 🎨</h3>
               <div className="cover-image" />
-              <p className="description">Coming soon...</p>
-            </div>
+              <p className="description">2024年11月に開催される、デザインフェスタ vol.60への出店を目指す</p>
+              <p className="partner">Partner: 紳士</p>
+              <p className="more">さらに詳しく</p>
+            </a>
           </div>
         </div>
       </section>
@@ -114,7 +116,7 @@ const Top = () => {
         </div>
       </section>
       <section id="endview" className="shape">
-        <div className="bg-graphic"></div>
+        <div className="bg-graphic" />
       </section>
       <BrandBar />
     </main>
