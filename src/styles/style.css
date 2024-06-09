@@ -182,7 +182,7 @@
   background-color: #0A0A0A;
   margin-top: 16px;
 }
-#project .items-wrapper .item .description, #project .items-wrapper .item .mate, #project .items-wrapper .item .more {
+#project .items-wrapper .item .description, #project .items-wrapper .item .partner, #project .items-wrapper .item .more {
   margin-top: 16px;
 }
 #project .items-wrapper .item .more {
@@ -213,6 +213,9 @@
 }
 #project .items-wrapper #radio .cover-image {
   background-image: url("/public/images/radio-cover.png");
+}
+#project .items-wrapper #visual .cover-image {
+  background-image: url("/public/images/visual-cover.png");
 }
 
 #endview {
