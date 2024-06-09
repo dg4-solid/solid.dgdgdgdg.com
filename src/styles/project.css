@@ -139,6 +139,9 @@
 #member .container .items-wrapper #tusk .profile-image {
   background-image: url("/public/images/member/tusk.png");
 }
+#member .container .items-wrapper #shinshi .profile-image {
+  background-color: #24489d;
+}
 #member .container .items-wrapper #dgdgdgdg .profile-image {
   background-image: url("/public/images/member/dgdgdgdg.png");
 }
