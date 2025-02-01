@@ -20,7 +20,7 @@ jobs:
         id: latest_tag
         run: |
           LATEST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
-          echo "::set-output name=tag::$LATEST_TAG"
+          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
       - name: Check for version change
         id: version_change
         run: |
@@ -30,15 +30,15 @@ jobs:
           VERSION_CHANGE=$(git diff $LATEST_TAG HEAD -- package.json | grep '"version":')
           if [ "$VERSION_CHANGE" != "" ]; then
             echo "Version changed."
-            echo "::set-output name=changed::true"
+            echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "No version change detected."
-            echo "::set-output name=changed::false"
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
       - name: Get new version
         id: get_version
         if: steps.version_change.outputs.changed == 'true'
-        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
   release:
     needs: [prepare]
