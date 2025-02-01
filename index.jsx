@@ -80,7 +80,7 @@ const Top = () => {
             <a href="/project/visual" id="visual" className="item">
               <h3 className="genre">Visual 🎨</h3>
               <div className="cover-image" />
-              <p className="description">2024年11月に開催される、デザインフェスタ vol.60への出店を目指す</p>
+              <p className="description">デザインフェスタ等への出店を目指す</p>
               <p className="partner">Partner: 紳士</p>
               <p className="more">さらに詳しく</p>
             </a>

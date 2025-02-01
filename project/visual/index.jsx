@@ -7,7 +7,7 @@ const Visual = () => {
         </a>
         <div className="container">
           <h1>Visual 🎨</h1>
-          <img src="/public/images/visual-cover.png" alt="" className="cover" />
+          {/* <img src="/public/images/xxx.png" alt="" className="cover" /> */}
         </div>
       </section>
       {/* <section id="about">

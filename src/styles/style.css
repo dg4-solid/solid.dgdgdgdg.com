@@ -214,10 +214,6 @@
 #project .items-wrapper #radio .cover-image {
   background-image: url("/public/images/radio-cover.png");
 }
-#project .items-wrapper #visual .cover-image {
-  background-image: url("/public/images/visual-cover.png");
-}
-
 #endview {
   margin-top: 296px;
 }
