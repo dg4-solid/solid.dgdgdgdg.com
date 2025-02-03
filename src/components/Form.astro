@@ -24,13 +24,11 @@ const { googleFormLink, inputNames, autoCompletes } = destination
   method="POST"
   action={googleFormLink}
   data-autocompletes={JSON.stringify(autoCompletes)}
+  data-input-names={JSON.stringify(inputNames)}
 >
   <div class="formChunk">
-    <label for="selectLetter">
-      お問い合わせ内容
-      <span class="red">*</span>
-    </label>
-    <div class="radio-group">
+    <label for="selectLetter"> お問い合わせ内容 </label>
+    <div class="radio-group" role="radiogroup" aria-required="true">
       {
         autoCompletes.map((autoComplete) => (
           <div>
@@ -39,7 +37,6 @@ const { googleFormLink, inputNames, autoCompletes } = destination
               name={inputNames.select}
               id={autoComplete.name}
               value={autoComplete.name}
-              required
             />
             <label for={autoComplete.name}>{autoComplete.name}</label>
           </div>
@@ -51,33 +48,22 @@ const { googleFormLink, inputNames, autoCompletes } = destination
   <div class="formChunk">
     <label for="inputName" id="nameLabel">
       <span class="name-text">お名前</span>
-      <span class="red">*</span>
     </label>
     <input type="text" name={inputNames.name} id="inputName" required />
   </div>
 
   <div class="formChunk">
-    <label for="inputEmail">
-      メールアドレス
-      <span class="red">*</span>
-    </label>
+    <label for="inputEmail"> メールアドレス </label>
     <input type="email" name={inputNames.email} id="inputEmail" required />
   </div>
 
   <div class="formChunk">
     <label for="textarea">
       本文
-      <span class="red">*</span>
       <br />
       <span id="autoCompleteMessage"></span>
     </label>
     <textarea name={inputNames.textarea} id="textarea" required></textarea>
-  </div>
-
-  <div class="formChunk">
-    <label>
-      <span class="red">*</span>は必須項目です
-    </label>
   </div>
 
   <div class="formChunk">
@@ -116,9 +102,6 @@ const { googleFormLink, inputNames, autoCompletes } = destination
 
       @media (max-width: 640px)
         width: 100%
-
-      span.red
-        color: #D40000
 
     input, select, textarea
       display: block
@@ -217,6 +200,7 @@ const { googleFormLink, inputNames, autoCompletes } = destination
   const nameText = document.querySelector(".name-text")
   const autoCompleteMessage = document.getElementById("autoCompleteMessage")
   const autoCompletes = JSON.parse(form?.dataset.autocompletes || "[]")
+  const inputNames = JSON.parse(form?.dataset.inputNames || "{}")
 
   if (form && nameText) {
     radioInputs.forEach((input) => {
@@ -240,6 +224,15 @@ const { googleFormLink, inputNames, autoCompletes } = destination
     form.addEventListener("submit", async (e) => {
       e.preventDefault()
       const formData = new FormData(form)
+      const radioButtons = form.querySelectorAll(`input[name="${inputNames.select}"]`)
+      const isAnyRadioSelected = Array.from(radioButtons).some(
+        (radio) => (radio as HTMLInputElement).checked
+      )
+
+      if (!isAnyRadioSelected) {
+        alert("お問い合わせ内容を選択してください")
+        return
+      }
 
       try {
         const response = await fetch(form.action, {
