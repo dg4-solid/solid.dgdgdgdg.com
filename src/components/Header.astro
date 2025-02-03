@@ -4,29 +4,38 @@ import BrandBar from "@/components/BrandBar.astro"
 
 <header>
   <div class="outside">
-    <a href="/#" class="logo is-hidden" aria-label="トップページへ戻る"></a>
-    <nav>
+    <a href="/#" class="logo js-outside-logo is-hidden" aria-label="トップページへ戻る"></a>
+    <nav class="js-outside-nav">
       <a href="/#about">About</a>
       <a href="/#project">Project</a>
       <a href="/#contactForm">Contact</a>
     </nav>
-    <div class="burger clickable" data-menu-button>
+
+    <div class="burger clickable js-menu-button" data-menu-button>
       <svg class="line">
-        <rect></rect>
-        <rect></rect>
-        <rect></rect>
+        <rect class="js-menu-rect"></rect>
+        <rect class="js-menu-rect"></rect>
+        <rect class="js-menu-rect"></rect>
       </svg>
     </div>
   </div>
 
-  <div class="inside" data-menu>
+  <div class="inside js-menu" data-menu>
     <nav>
-      <a href="/#about">About</a>
-      <a href="/#project">Project</a>
-      <a href="/#contactForm">Contact</a>
+      <a href="/#about" class="js-menu-link">About</a>
+      <a href="/#project" class="js-menu-link">Project</a>
+      <a href="/#contactForm" class="js-menu-link">Contact</a>
     </nav>
 
     <BrandBar />
+  </div>
+
+  <div class="burger clickable" data-menu-button>
+    <svg class="line">
+      <rect></rect>
+      <rect></rect>
+      <rect></rect>
+    </svg>
   </div>
 </header>
 
