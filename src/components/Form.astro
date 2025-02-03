@@ -204,17 +204,20 @@ const { googleFormLink, inputNames, autoCompletes } = destination
 </style>
 
 <script>
-  const form = document.getElementById("form") as HTMLFormElement
-  const radioInputs = document.querySelectorAll('input[type="radio"]')
-  const nameText = document.querySelector(".name-text")
-  const autoCompleteMessage = document.getElementById("autoCompleteMessage")
-  const autoCompletes = JSON.parse(form?.dataset.autocompletes || "[]")
-  const inputNames = JSON.parse(form?.dataset.inputNames || "{}")
+  const form = document.getElementById("form")
+  if (!(form instanceof HTMLFormElement)) throw new Error("Form not found")
 
-  if (form && nameText) {
+  const radioInputs = document.querySelectorAll('input[type="radio"]')
+  const nameText = document.querySelector<HTMLElement>(".js-name-text")
+  const autoCompleteMessage = document.querySelector<HTMLElement>(".js-auto-complete-message")
+  const autoCompletes = JSON.parse(form.dataset.autocompletes || "[]")
+  const inputNames = JSON.parse(form.dataset.inputNames || "{}")
+
+  if (nameText) {
     radioInputs.forEach((input) => {
       input.addEventListener("change", (e) => {
-        const target = e.target as HTMLInputElement
+        if (!(e.target instanceof HTMLInputElement)) return
+        const target = e.target
         if (target.value.includes("おたより")) {
           nameText.textContent = "ラジオネーム"
         } else {
@@ -235,7 +238,7 @@ const { googleFormLink, inputNames, autoCompletes } = destination
       const formData = new FormData(form)
       const radioButtons = form.querySelectorAll(`input[name="${inputNames.select}"]`)
       const isAnyRadioSelected = Array.from(radioButtons).some(
-        (radio) => (radio as HTMLInputElement).checked
+        (radio) => radio instanceof HTMLInputElement && radio.checked
       )
 
       if (!isAnyRadioSelected) {
@@ -250,16 +253,14 @@ const { googleFormLink, inputNames, autoCompletes } = destination
         })
 
         if (response.ok) {
-          const messageElement = document.createElement("p")
-          messageElement.className = "message"
-          messageElement.textContent = "送信が完了しました。お問い合わせありがとうございます。"
-          form.replaceWith(messageElement)
+          alert("送信が完了しました")
+          form.reset()
+        } else {
+          throw new Error("送信に失敗しました")
         }
       } catch (error) {
-        const messageElement = document.createElement("p")
-        messageElement.className = "message"
-        messageElement.textContent = "送信が完了しました。お問い合わせありがとうございます。"
-        form.replaceWith(messageElement)
+        alert("送信に失敗しました")
+        console.error(error)
       }
     })
   }

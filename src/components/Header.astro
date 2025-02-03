@@ -1,7 +1,5 @@
 ---
 import BrandBar from "@/components/BrandBar.astro"
-
-const displayLogo = Astro.props.displayLogo ?? true
 ---
 
 <header>
@@ -206,14 +204,21 @@ const displayLogo = Astro.props.displayLogo ?? true
 </style>
 
 <script>
-  const menuButton = document.querySelector("[data-menu-button]")
-  const menu = document.querySelector("[data-menu]")
-  const rects = document.querySelectorAll(".line rect")
-  const links = document.querySelectorAll(".inside a")
-  const outsideNav = document.querySelector(".outside nav")
-  const outsideLogo = document.querySelector(".outside .logo")
+  const menuButton = document.querySelector(".js-menu-button")
+  const menu = document.querySelector(".js-menu")
+  const rects = document.querySelectorAll(".js-menu-rect")
+  const outsideNav = document.querySelector(".js-outside-nav")
+  const outsideLogo = document.querySelector(".js-outside-logo")
+  const links = document.querySelectorAll(".js-menu-link")
 
-  if (menuButton && menu) {
+  const closeMenu = () => {
+    menu?.classList.remove("is-open")
+    rects.forEach((rect) => rect.classList.remove("is-open"))
+    outsideNav?.classList.remove("is-open")
+    document.body.style.overflow = "unset"
+  }
+
+  if (menuButton instanceof HTMLElement && menu instanceof HTMLElement) {
     menuButton.addEventListener("click", () => {
       menu.classList.toggle("is-open")
       rects.forEach((rect) => rect.classList.toggle("is-open"))
@@ -221,14 +226,7 @@ const displayLogo = Astro.props.displayLogo ?? true
       document.body.style.overflow = menu.classList.contains("is-open") ? "hidden" : "unset"
     })
 
-    if (outsideLogo) outsideLogo.addEventListener("click", closeMenu)
+    if (outsideLogo instanceof HTMLElement) outsideLogo.addEventListener("click", closeMenu)
     links.forEach((link) => link.addEventListener("click", closeMenu))
-  }
-
-  function closeMenu() {
-    menu.classList.remove("is-open")
-    rects.forEach((rect) => rect.classList.remove("is-open"))
-    outsideNav?.classList.remove("is-open")
-    document.body.style.overflow = "unset"
   }
 </script>
