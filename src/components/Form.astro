@@ -47,7 +47,7 @@ const { googleFormLink, inputNames, autoCompletes } = destination
 
   <div class="formChunk">
     <label for="inputName" id="nameLabel">
-      <span class="name-text">お名前</span>
+      <span class="js-name-text name-text">お名前</span>
     </label>
     <input type="text" name={inputNames.name} id="inputName" required />
   </div>
@@ -61,7 +61,7 @@ const { googleFormLink, inputNames, autoCompletes } = destination
     <label for="textarea">
       本文
       <br />
-      <span id="autoCompleteMessage"></span>
+      <span class="js-auto-complete-message" id="autoCompleteMessage"></span>
     </label>
     <textarea name={inputNames.textarea} id="textarea" required></textarea>
   </div>
