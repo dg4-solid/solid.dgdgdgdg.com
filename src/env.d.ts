@@ -1,4 +1,3 @@
-/// <reference path="../.astro/types.d.ts" />
-/// <reference types="astro/client" />
-/// <reference types="astro/assets" />
 import type {} from "../.astro/types";
+import type {} from "astro/client";
+import type {} from "astro/assets";
