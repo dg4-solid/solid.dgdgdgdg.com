@@ -2,6 +2,10 @@
 import Header from "@/components/Header.astro"
 import BrandBar from "@/components/BrandBar.astro"
 import Form from "@/components/Form.astro"
+import { Image } from "astro:assets"
+import ogpImage from "/public/images/ogp.jpg"
+import iconInvention from "/public/images/icon-invention.svg"
+import iconBalance from "/public/images/icon-balance.svg"
 
 const formDestination = {
   googleFormLink:
@@ -60,7 +64,11 @@ const formDestination = {
         <div class="container overview">
           <h2 class="title">About</h2>
           <h3>Overview</h3>
-          <img src="/images/ogp.jpg" alt="" />
+          <Image
+            src={ogpImage}
+            alt="Solid Point Overview"
+            style="width: 100%; height: auto; object-fit: contain;"
+          />
           <p class="text">
             dgdgdgdgを始点として、デザイン、映像、音楽
             <br />
@@ -78,13 +86,25 @@ const formDestination = {
           <p class="note">Solid Pointは日本語で「凝固点（物質が液体から固体へと変化する瞬間）」</p>
           <div class="items-wrapper">
             <div class="item">
-              <img src="/images/icon-invention.svg" alt="" />
+              <Image
+                src={iconInvention}
+                alt="頭の中に電球が浮かぶ赤いシルエットのアイコン"
+                width={100}
+                height={100}
+                loading="lazy"
+              />
               <p class="caption">
                 アイデアが具体的な形や作品として凝固する、ものづくりの転換点を表す
               </p>
             </div>
             <div class="item">
-              <img src="/images/icon-balance.svg" alt="" />
+              <Image
+                src={iconBalance}
+                alt="天秤（てんびん）の形をした赤いアイコン"
+                width={100}
+                height={100}
+                loading="lazy"
+              />
               <p class="caption">
                 創造と実行、革新と安定、変化（液体から固体）と持続性の間のバランスをとる状態を表す
               </p>
