@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:astro/recommended"],
+  "extends": ["plugin:astro/recommended", "plugin:import/recommended"],
   "parser": "astro-eslint-parser",
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
@@ -9,12 +9,34 @@
     "astro/no-unused-elements": "error",
     "astro/self-closing-empty-elements": ["error", "always"]
   },
+  "plugins": ["simple-import-sort", "import"],
   "overrides": [
     {
       "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      },
       "rules": {
-        "no-mixed-spaces-and-tabs": "off"
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [["^astro:"], ["^@/"], ["^[./]"]]
+          }
+        ],
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error"
       }
     }
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".astro"]
+      }
+    }
+  }
 }
