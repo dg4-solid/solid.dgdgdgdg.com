@@ -1,42 +1,67 @@
-const Radio = () => {
-  return (
-    <div>
+---
+import BrandBar from '../../../components/BrandBar.astro';
+import Button from '../../../components/Button.astro';
+import Form from '../../../components/Form.astro';
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="icon" href="/public/images/favicon.ico" />
+
+    <meta property="og:title" content="ラジオのタイトルを入力 | dgdgdgdg Solid Point" />
+    <meta property="og:site_name" content="dgdgdgdg Solid Point" />
+    <meta property="og:url" content="https://solid.dgdgdgdg.com/project/radio" />
+    <meta property="og:description" content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://solid.dgdgdgdg.com/public/images/radio-cover.png" />
+
+    <title>ラジオのタイトルを入力 | dgdgdgdg Solid Point</title>
+  </head>
+
+  <body>
+    <main>
       <section id="article-header">
-        <a className="back" href="/">
+        <a class="back" href="/">
           Back to Top
         </a>
-        <div className="container">
+        <div class="container">
           <h1>Radio 📻</h1>
-          <img src="/public/images/radio-cover.png" alt="" className="cover" />
+          <img src="/public/images/radio-cover.png" alt="" class="cover" />
         </div>
       </section>
+
       <section id="about">
-        <div className="container">
-          <h2 className="title">About</h2>
+        <div class="container">
+          <h2 class="title">About</h2>
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=UURz6N_gsMHfNhvLOGMEQtjg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+            allowfullscreen
           ></iframe>
-          <p className="text">
+          <p class="text">
             ゆるく雑談するラジオ
             <br />
             「ラジオのタイトルを入力」
           </p>
-          <div className="button-wrapper">
+          <div class="button-wrapper">
             <Button href="https://youtube.com/@EtRt" text="YouTube Channel" external={true} />
           </div>
         </div>
       </section>
+
       <section id="member">
-        <div className="container">
-          <h2 className="title">Member</h2>
-          <div className="items-wrapper">
-            <div id="tusk" className="item">
-              <div className="profile-image" />
-              <h3 className="name">Tusk</h3>
-              <p className="position">Personality</p>
-              <div className="social-wrapper">
+        <div class="container">
+          <h2 class="title">Member</h2>
+          <div class="items-wrapper">
+            <div id="tusk" class="item">
+              <div class="profile-image" />
+              <h3 class="name">Tusk</h3>
+              <p class="position">Personality</p>
+              <div class="social-wrapper">
                 <a href="https://x.com/@Tusk_15679" target="_blank" rel="noopener noreferrer">
                   <img src="/public/images/icon/x.svg" alt="" />
                 </a>
@@ -45,11 +70,11 @@ const Radio = () => {
                 </a>
               </div>
             </div>
-            <div id="dgdgdgdg" className="item">
-              <div className="profile-image" />
-              <h3 className="name">dgdgdgdg</h3>
-              <p className="position">Personality</p>
-              <div className="social-wrapper">
+            <div id="dgdgdgdg" class="item">
+              <div class="profile-image" />
+              <h3 class="name">dgdgdgdg</h3>
+              <p class="position">Personality</p>
+              <div class="social-wrapper">
                 <a href="https://x.com/@dg4_design" target="_blank" rel="noopener noreferrer">
                   <img src="/public/images/icon/x.svg" alt="" />
                 </a>
@@ -69,8 +94,8 @@ const Radio = () => {
       </section>
 
       <section id="contactForm">
-        <div className="container">
-          <h2 className="title">
+        <div class="container">
+          <h2 class="title">
             Contact<span> to ラジオのタイトルを入力</span>
           </h2>
           <Form
@@ -80,31 +105,35 @@ const Radio = () => {
                 name: "entry.183923869",
                 email: "emailAddress",
                 select: "entry.1363996325",
-                textarea: "entry.1860530349",
+                textarea: "entry.1860530349"
               },
               autoCompletes: [
                 {
                   name: "依頼",
-                  message: "依頼内容, 趣旨・目的, 要望など",
+                  message: "依頼内容, 趣旨・目的, 要望など"
                 },
                 {
                   name: "おたより: ふつうのおたより",
-                  message: "おたよりの内容",
+                  message: "おたよりの内容"
                 },
                 {
-                  name: "その他",
-                },
-              ],
+                  name: "その他"
+                }
+              ]
             }}
           />
         </div>
       </section>
 
       <BrandBar />
-    </div>
-  );
-};
+    </main>
+  </body>
+</html>
 
-const target = document.getElementById("radioPage");
-const root = ReactDOM.createRoot(target);
-root.render(<Radio />);
+
+
+<style is:global>
+  @import "../../../styles/_reset.css";
+  @import "../../../styles/global.sass";
+  @import "../../../styles/project.sass";
+</style>
