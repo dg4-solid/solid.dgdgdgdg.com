@@ -1,0 +1,20 @@
+{
+  "extends": ["plugin:astro/recommended"],
+  "parser": "astro-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [".astro"]
+  },
+  "rules": {
+    "astro/no-unused-elements": "error",
+    "astro/self-closing-empty-elements": ["error", "always"]
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "rules": {
+        "no-mixed-spaces-and-tabs": "off"
+      }
+    }
+  ]
+}

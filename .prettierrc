@@ -1,0 +1,25 @@
+{
+  "plugins": ["prettier-plugin-astro"],
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "htmlWhitespaceSensitivity": "strict",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro",
+        "astroAllowShorthand": true,
+        "singleQuote": false,
+        "semi": false,
+        "tabWidth": 2,
+        "printWidth": 100,
+        "trailingComma": "es5",
+        "bracketSameLine": false,
+        "jsxSingleQuote": false,
+        "jsxBracketSameLine": false,
+        "astroSortOrder": "markup | scripts | styles",
+        "voidElements": "always"
+      }
+    }
+  ]
+}

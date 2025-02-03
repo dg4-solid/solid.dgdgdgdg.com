@@ -1,10 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import BrandBar from '../components/BrandBar.astro';
-import Form from '../components/Form.astro';
+import Header from "@/components/Header.astro"
+import BrandBar from "@/components/BrandBar.astro"
+import Form from "@/components/Form.astro"
 
 const formDestination = {
-  googleFormLink: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe9M-6DYyXZuSSf8gm2S_JvT3yQDsMrHyJWekkBM4CM_QKqkg/formResponse",
+  googleFormLink:
+    "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe9M-6DYyXZuSSf8gm2S_JvT3yQDsMrHyJWekkBM4CM_QKqkg/formResponse",
   inputNames: {
     name: "entry.1803120711",
     email: "entry.506070991",
@@ -20,10 +21,10 @@ const formDestination = {
       name: "その他",
     },
   ],
-};
+}
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -35,7 +36,10 @@ const formDestination = {
     <meta property="og:title" content="dgdgdgdg Solid Point" />
     <meta property="og:site_name" content="dgdgdgdg Solid Point" />
     <meta property="og:url" content="https://www.solid.dgdgdgdg.com" />
-    <meta property="og:description" content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。" />
+    <meta
+      property="og:description"
+      content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.solid.dgdgdgdg.com/images/ogp.jpg" />
 
@@ -48,7 +52,7 @@ const formDestination = {
         <div class="bg-graphic"></div>
         <span class="title">
           <p class="slogan">想像の閃きが実体を得る凝固点</p>
-          <h1 id="logotype" />
+          <h1 id="logotype"></h1>
         </span>
       </section>
 
@@ -75,11 +79,15 @@ const formDestination = {
           <div class="items-wrapper">
             <div class="item">
               <img src="/images/icon-invention.svg" alt="" />
-              <p class="caption">アイデアが具体的な形や作品として凝固する、ものづくりの転換点を表す</p>
+              <p class="caption">
+                アイデアが具体的な形や作品として凝固する、ものづくりの転換点を表す
+              </p>
             </div>
             <div class="item">
               <img src="/images/icon-balance.svg" alt="" />
-              <p class="caption">創造と実行、革新と安定、変化（液体から固体）と持続性の間のバランスをとる状態を表す</p>
+              <p class="caption">
+                創造と実行、革新と安定、変化（液体から固体）と持続性の間のバランスをとる状態を表す
+              </p>
             </div>
           </div>
         </div>
@@ -91,7 +99,7 @@ const formDestination = {
           <div class="items-wrapper">
             <a href="/project/radio" id="radio" class="item">
               <h3 class="genre">Radio 📻</h3>
-              <div class="cover-image" />
+              <div class="cover-image"></div>
               <p class="description">
                 ゆるく雑談するラジオ
                 <br />
@@ -102,7 +110,7 @@ const formDestination = {
             </a>
             <a href="/project/visual" id="visual" class="item">
               <h3 class="genre">Visual 🎨</h3>
-              <div class="cover-image" />
+              <div class="cover-image"></div>
               <p class="description">デザインフェスタ等への出店を目指す</p>
               <p class="partner">Partner: 紳士</p>
               <p class="more">さらに詳しく</p>
@@ -121,7 +129,7 @@ const formDestination = {
       </section>
 
       <section id="endview" class="shape">
-        <div class="bg-graphic" />
+        <div class="bg-graphic"></div>
       </section>
       <BrandBar />
     </main>
@@ -129,27 +137,27 @@ const formDestination = {
 </html>
 
 <style is:global>
-  @import "../styles/_reset.css";
-  @import "../styles/global.sass";
-  @import "../styles/style.sass";
+  @import "@/styles/_reset.css";
+  @import "@/styles/global.sass";
+  @import "@/styles/style.sass";
 </style>
 
 <script>
   const observer = new IntersectionObserver(
     ([entry]) => {
-      const header = document.querySelector('header');
+      const header = document.querySelector("header")
       if (header) {
-        const logo = header.querySelector('.logo');
+        const logo = header.querySelector(".logo")
         if (logo) {
-          logo.classList.toggle('is-hidden', entry.isIntersecting);
+          logo.classList.toggle("is-hidden", entry.isIntersecting)
         }
       }
     },
     { threshold: 0.166 }
-  );
+  )
 
-  const logotype = document.getElementById('logotype');
+  const logotype = document.getElementById("logotype")
   if (logotype) {
-    observer.observe(logotype);
+    observer.observe(logotype)
   }
-</script> 
+</script>

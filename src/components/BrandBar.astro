@@ -1,16 +1,12 @@
 ---
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear()
 ---
 
 <div id="brandBar">
   <p class="copyright">&copy; dgdgdgdg Solid Point {currentYear}</p>
   <div class="link-wrapper">
-    <a href="https://dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
-      dgdgdgdg
-    </a>
-    <a href="https://x.com/dg4_solid" target="_blank" rel="noopener noreferrer">
-      Official X
-    </a>
+    <a href="https://dgdgdgdg.com" target="_blank" rel="noopener noreferrer"> dgdgdgdg </a>
+    <a href="https://x.com/dg4_solid" target="_blank" rel="noopener noreferrer"> Official X </a>
     <a href="https://bsky.app/profile/solid.dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
       Official Bluesky
     </a>
@@ -18,38 +14,38 @@ const currentYear = new Date().getFullYear();
 </div>
 
 <style lang="sass">
-#brandBar
-  display: flex
-  justify-content: space-between
-  align-items: center
-  width: 100%
-  padding: 0 7vw
-  margin: 80px 0
-
-  @media (max-width: 640px)
-    flex-direction: column-reverse
-    gap: 16px
-    padding: 0 2.5vw
-    margin: 56px 0
-
-  .copyright
-    font-size: 12px
-
-  .link-wrapper
+  #brandBar
     display: flex
-    gap: 40px
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 0 7vw
+    margin: 80px 0
 
     @media (max-width: 640px)
-      flex-wrap: wrap
-      gap: 16px 40px
-      justify-content: center
+      flex-direction: column-reverse
+      gap: 16px
+      padding: 0 2.5vw
+      margin: 56px 0
 
-    a
-      color: #EBE6DD
-      text-decoration: underline
-      transition: all 0.2s
+    .copyright
+      font-size: 12px
 
-      &:hover
-        color: #D40000
+    .link-wrapper
+      display: flex
+      gap: 40px
+
+      @media (max-width: 640px)
+        flex-wrap: wrap
+        gap: 16px 40px
+        justify-content: center
+
+      a
+        color: #EBE6DD
+        text-decoration: underline
         transition: all 0.2s
-</style> 
+
+        &:hover
+          color: #D40000
+          transition: all 0.2s
+</style>
