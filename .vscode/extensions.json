@@ -1,3 +1,10 @@
 {
-  "recommendations": ["eamodio.gitlens", "mhutchie.git-graph", "streetsidesoftware.code-spell-checker", "syler.sass-indented", "glenn2223.live-sass"]
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "eamodio.gitlens",
+    "hansu.git-graph-2",
+    "streetsidesoftware.code-spell-checker",
+    "syler.sass-indented",
+    "esbenp.prettier-vscode"
+  ]
 }
