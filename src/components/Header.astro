@@ -80,12 +80,12 @@ const displayLogo = Astro.props.displayLogo ?? true
         transition: all 0.3s
         margin-left: auto
 
-        @media (max-width: 640px)
-          display: none
-
         &.is-open
           opacity: 0
           transition: all 0.3s
+
+        @media (max-width: 640px)
+          display: none
 
         *
           font-family: "Monaspace Krypton Var"
@@ -210,20 +210,25 @@ const displayLogo = Astro.props.displayLogo ?? true
   const menu = document.querySelector("[data-menu]")
   const rects = document.querySelectorAll(".line rect")
   const links = document.querySelectorAll(".inside a")
+  const outsideNav = document.querySelector(".outside nav")
+  const outsideLogo = document.querySelector(".outside .logo")
 
   if (menuButton && menu) {
     menuButton.addEventListener("click", () => {
       menu.classList.toggle("is-open")
       rects.forEach((rect) => rect.classList.toggle("is-open"))
+      outsideNav?.classList.toggle("is-open")
       document.body.style.overflow = menu.classList.contains("is-open") ? "hidden" : "unset"
     })
 
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("is-open")
-        rects.forEach((rect) => rect.classList.remove("is-open"))
-        document.body.style.overflow = "unset"
-      })
-    })
+    if (outsideLogo) outsideLogo.addEventListener("click", closeMenu)
+    links.forEach((link) => link.addEventListener("click", closeMenu))
+  }
+
+  function closeMenu() {
+    menu.classList.remove("is-open")
+    rects.forEach((rect) => rect.classList.remove("is-open"))
+    outsideNav?.classList.remove("is-open")
+    document.body.style.overflow = "unset"
   }
 </script>
