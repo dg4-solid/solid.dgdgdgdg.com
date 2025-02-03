@@ -1,25 +1,30 @@
 ---
 interface Props {
   destination: {
-    googleFormLink: string;
+    googleFormLink: string
     inputNames: {
-      select: string;
-      name: string;
-      email: string;
-      textarea: string;
-    };
+      select: string
+      name: string
+      email: string
+      textarea: string
+    }
     autoCompletes: {
-      name: string;
-      message?: string;
-    }[];
-  };
+      name: string
+      message?: string
+    }[]
+  }
 }
 
-const { destination } = Astro.props;
-const { googleFormLink, inputNames, autoCompletes } = destination;
+const { destination } = Astro.props
+const { googleFormLink, inputNames, autoCompletes } = destination
 ---
 
-<form id="form" method="POST" action={googleFormLink} data-autocompletes={JSON.stringify(autoCompletes)}>
+<form
+  id="form"
+  method="POST"
+  action={googleFormLink}
+  data-autocompletes={JSON.stringify(autoCompletes)}
+>
   <div class="formChunk">
     <label for="selectLetter">
       お問い合わせ内容
@@ -81,181 +86,179 @@ const { googleFormLink, inputNames, autoCompletes } = destination;
   </div>
 
   <div class="formChunk">
-    <button type="submit" class="component-button">
-      送信
-    </button>
+    <button type="submit" class="component-button"> 送信 </button>
   </div>
 </form>
 
 <style lang="sass">
-#contactForm .container h2.title span
-  font-size: 16px
-  line-height: 1.6em
+  #contactForm .container h2.title span
+    font-size: 16px
+    line-height: 1.6em
 
-p.message
-  text-align: center
+  p.message
+    text-align: center
 
-form .formChunk
-  display: flex
-  gap: 20px
-  margin-top: 10px
-
-  @media (max-width: 640px)
-    flex-direction: column
-    gap: 0
-
-  label
-    display: block
-    min-width: 200px
-    width: 200px
-    user-select: none
-    padding: 10px 0
-
-    @media (max-width: 640px)
-      width: 100%
-
-    span.red
-      color: #D40000
-
-  input, select, textarea
-    display: block
-    width: 440px
-    padding: 8px 16px
-    border: 2px solid rgba(235, 230, 221, 0.5)
-
-    @media (max-width: 640px)
-      width: 100%
-
-  .radio-group
+  form .formChunk
     display: flex
-    flex-wrap: wrap
-    gap: 8px
+    gap: 20px
+    margin-top: 10px
 
-  input[type="radio"]
-    display: none
+    @media (max-width: 640px)
+      flex-direction: column
+      gap: 0
 
-    & + label
-      display: inline-block
-      min-width: unset
-      width: fit-content
-      height: 48px
-      line-height: 42px
+    label
+      display: block
+      min-width: 200px
+      width: 200px
+      user-select: none
+      padding: 10px 0
+
+      @media (max-width: 640px)
+        width: 100%
+
+      span.red
+        color: #D40000
+
+    input, select, textarea
+      display: block
+      width: 440px
+      padding: 8px 16px
       border: 2px solid rgba(235, 230, 221, 0.5)
-      cursor: pointer
-      padding: 0px 24px
-      border-radius: 50px
 
-      &:hover
-        border-color: #D40000
+      @media (max-width: 640px)
+        width: 100%
 
-    &:checked + label
-      border-color: #D40000
-      background-color: rgba(212, 0, 0, 0.5)
+    .radio-group
+      display: flex
+      flex-wrap: wrap
+      gap: 8px
 
-  textarea
-    height: calc(12.8em + 16px + 4px)
+    input[type="radio"]
+      display: none
 
-  &:has(input[type="checkbox"])
-    display: flex
-    min-width: unset
-    width: fit-content
-    margin: 0 auto
-    margin-top: 20px
-    gap: 0
+      & + label
+        display: inline-block
+        min-width: unset
+        width: fit-content
+        height: 48px
+        line-height: 42px
+        border: 2px solid rgba(235, 230, 221, 0.5)
+        cursor: pointer
+        padding: 0px 24px
+        border-radius: 50px
 
-    input[type="checkbox"]
-      aspect-ratio: 1/1
-      width: 32px
-      padding: 0
-      margin-right: 10px
-      background-color: #141414
-      position: relative
-      cursor: pointer
+        &:hover
+          border-color: #D40000
 
-      &:hover
-        border-color: #D40000
-
-      &::before
-        content: ""
-        display: block
-        width: 0em
-        height: 0em
-        transition: 0.2s
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-        pointer-events: none
-        background-color: #D40000
-
-      &:checked
+      &:checked + label
         border-color: #D40000
         background-color: rgba(212, 0, 0, 0.5)
 
-        &::before
-          width: 1em
-          height: 1em
-          transition: 0.1s
+    textarea
+      height: calc(12.8em + 16px + 4px)
 
-    label
-      line-height: 32px
+    &:has(input[type="checkbox"])
+      display: flex
       min-width: unset
       width: fit-content
-      padding: 0
-      cursor: pointer
+      margin: 0 auto
+      margin-top: 20px
+      gap: 0
 
-  button[type="submit"].component-button
-    cursor: pointer
+      input[type="checkbox"]
+        aspect-ratio: 1/1
+        width: 32px
+        padding: 0
+        margin-right: 10px
+        background-color: #141414
+        position: relative
+        cursor: pointer
+
+        &:hover
+          border-color: #D40000
+
+        &::before
+          content: ""
+          display: block
+          width: 0em
+          height: 0em
+          transition: 0.2s
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          pointer-events: none
+          background-color: #D40000
+
+        &:checked
+          border-color: #D40000
+          background-color: rgba(212, 0, 0, 0.5)
+
+          &::before
+            width: 1em
+            height: 1em
+            transition: 0.1s
+
+      label
+        line-height: 32px
+        min-width: unset
+        width: fit-content
+        padding: 0
+        cursor: pointer
+
+    button[type="submit"].component-button
+      cursor: pointer
 </style>
 
 <script>
-const form = document.getElementById('form') as HTMLFormElement;
-const radioInputs = document.querySelectorAll('input[type="radio"]');
-const nameText = document.querySelector('.name-text');
-const autoCompleteMessage = document.getElementById('autoCompleteMessage');
-const autoCompletes = JSON.parse(form?.dataset.autocompletes || '[]');
+  const form = document.getElementById("form") as HTMLFormElement
+  const radioInputs = document.querySelectorAll('input[type="radio"]')
+  const nameText = document.querySelector(".name-text")
+  const autoCompleteMessage = document.getElementById("autoCompleteMessage")
+  const autoCompletes = JSON.parse(form?.dataset.autocompletes || "[]")
 
-if (form && nameText) {
-  radioInputs.forEach(input => {
-    input.addEventListener('change', (e) => {
-      const target = e.target as HTMLInputElement;
-      if (target.value.includes('おたより')) {
-        nameText.textContent = 'ラジオネーム';
-      } else {
-        nameText.textContent = 'お名前';
+  if (form && nameText) {
+    radioInputs.forEach((input) => {
+      input.addEventListener("change", (e) => {
+        const target = e.target as HTMLInputElement
+        if (target.value.includes("おたより")) {
+          nameText.textContent = "ラジオネーム"
+        } else {
+          nameText.textContent = "お名前"
+        }
+
+        const autoComplete = autoCompletes.find((ac) => ac.name === target.value)
+        if (autoComplete?.message && autoCompleteMessage) {
+          autoCompleteMessage.textContent = `(${autoComplete.message})`
+        } else if (autoCompleteMessage) {
+          autoCompleteMessage.textContent = ""
+        }
+      })
+    })
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      const formData = new FormData(form)
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+        })
+
+        if (response.ok) {
+          const messageElement = document.createElement("p")
+          messageElement.className = "message"
+          messageElement.textContent = "送信が完了しました。お問い合わせありがとうございます。"
+          form.replaceWith(messageElement)
+        }
+      } catch (error) {
+        const messageElement = document.createElement("p")
+        messageElement.className = "message"
+        messageElement.textContent = "送信が完了しました。お問い合わせありがとうございます。"
+        form.replaceWith(messageElement)
       }
-
-      const autoComplete = autoCompletes.find(ac => ac.name === target.value);
-      if (autoComplete?.message && autoCompleteMessage) {
-        autoCompleteMessage.textContent = `(${autoComplete.message})`;
-      } else if (autoCompleteMessage) {
-        autoCompleteMessage.textContent = '';
-      }
-    });
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const messageElement = document.createElement('p');
-        messageElement.className = 'message';
-        messageElement.textContent = '送信が完了しました。お問い合わせありがとうございます。';
-        form.replaceWith(messageElement);
-      }
-    } catch (error) {
-      const messageElement = document.createElement('p');
-      messageElement.className = 'message';
-      messageElement.textContent = '送信が完了しました。お問い合わせありがとうございます。';
-      form.replaceWith(messageElement);
-    }
-  });
-}
+    })
+  }
 </script>

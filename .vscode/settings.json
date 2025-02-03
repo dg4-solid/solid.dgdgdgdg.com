@@ -3,5 +3,30 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
-  "liveSassCompile.settings.generateMap": false
+  "liveSassCompile.settings.generateMap": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "prettier.singleQuote": false,
+  "prettier.jsxSingleQuote": false,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "emmet.useInlineCompletions": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "eslint.validate": ["javascript", "astro"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "astro"
+  ]
 }

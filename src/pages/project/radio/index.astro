@@ -1,7 +1,7 @@
 ---
-import BrandBar from '../../../components/BrandBar.astro';
-import Button from '../../../components/Button.astro';
-import Form from '../../../components/Form.astro';
+import BrandBar from "@/components/BrandBar.astro"
+import Button from "@/components/Button.astro"
+import Form from "@/components/Form.astro"
 ---
 
 <html lang="ja">
@@ -15,7 +15,10 @@ import Form from '../../../components/Form.astro';
     <meta property="og:title" content="ラジオのタイトルを入力 | dgdgdgdg Solid Point" />
     <meta property="og:site_name" content="dgdgdgdg Solid Point" />
     <meta property="og:url" content="https://solid.dgdgdgdg.com/project/radio" />
-    <meta property="og:description" content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。" />
+    <meta
+      property="og:description"
+      content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://solid.dgdgdgdg.com/public/images/radio-cover.png" />
 
@@ -25,9 +28,7 @@ import Form from '../../../components/Form.astro';
   <body>
     <main>
       <section id="article-header">
-        <a class="back" href="/">
-          Back to Top
-        </a>
+        <a class="back" href="/"> Back to Top </a>
         <div class="container">
           <h1>Radio 📻</h1>
           <img src="/public/images/radio-cover.png" alt="" class="cover" />
@@ -40,8 +41,7 @@ import Form from '../../../components/Form.astro';
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=UURz6N_gsMHfNhvLOGMEQtjg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+            allowfullscreen></iframe>
           <p class="text">
             ゆるく雑談するラジオ
             <br />
@@ -58,33 +58,49 @@ import Form from '../../../components/Form.astro';
           <h2 class="title">Member</h2>
           <div class="items-wrapper">
             <div id="tusk" class="item">
-              <div class="profile-image" />
+              <div class="profile-image"></div>
               <h3 class="name">Tusk</h3>
               <p class="position">Personality</p>
               <div class="social-wrapper">
                 <a href="https://x.com/@Tusk_15679" target="_blank" rel="noopener noreferrer">
                   <img src="/public/images/icon/x.svg" alt="" />
                 </a>
-                <a href="https://instagram.com/tusk_15679" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://instagram.com/tusk_15679"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/public/images/icon/instagram.svg" alt="" />
                 </a>
               </div>
             </div>
             <div id="dgdgdgdg" class="item">
-              <div class="profile-image" />
+              <div class="profile-image"></div>
               <h3 class="name">dgdgdgdg</h3>
               <p class="position">Personality</p>
               <div class="social-wrapper">
                 <a href="https://x.com/@dg4_design" target="_blank" rel="noopener noreferrer">
                   <img src="/public/images/icon/x.svg" alt="" />
                 </a>
-                <a href="https://misskey.design/@dg4_design" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://misskey.design/@dg4_design"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/public/images/icon/misskey.svg" alt="" />
                 </a>
-                <a href="https://www.instagram.com/dg4_design" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.instagram.com/dg4_design"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/public/images/icon/instagram.svg" alt="" />
                 </a>
-                <a href="https://bsky.app/profile/dgdgdgdg.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://bsky.app/profile/dgdgdgdg.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/public/images/icon/bsky.svg" alt="" />
                 </a>
               </div>
@@ -100,26 +116,27 @@ import Form from '../../../components/Form.astro';
           </h2>
           <Form
             destination={{
-              googleFormLink: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSc_O7Ald3TqkgNkkwBnaHo-W3oq5BKo_UUiE38we38UL8nmJA/formResponse",
+              googleFormLink:
+                "https://docs.google.com/forms/u/1/d/e/1FAIpQLSc_O7Ald3TqkgNkkwBnaHo-W3oq5BKo_UUiE38we38UL8nmJA/formResponse",
               inputNames: {
                 name: "entry.183923869",
                 email: "emailAddress",
                 select: "entry.1363996325",
-                textarea: "entry.1860530349"
+                textarea: "entry.1860530349",
               },
               autoCompletes: [
                 {
                   name: "依頼",
-                  message: "依頼内容, 趣旨・目的, 要望など"
+                  message: "依頼内容, 趣旨・目的, 要望など",
                 },
                 {
                   name: "おたより: ふつうのおたより",
-                  message: "おたよりの内容"
+                  message: "おたよりの内容",
                 },
                 {
-                  name: "その他"
-                }
-              ]
+                  name: "その他",
+                },
+              ],
             }}
           />
         </div>
@@ -130,10 +147,8 @@ import Form from '../../../components/Form.astro';
   </body>
 </html>
 
-
-
 <style is:global>
-  @import "../../../styles/_reset.css";
-  @import "../../../styles/global.sass";
-  @import "../../../styles/project.sass";
+  @import "@/styles/_reset.css";
+  @import "@/styles/global.sass";
+  @import "@/styles/project.sass";
 </style>
