@@ -56,10 +56,21 @@
       font-size: 64px
       @include media.sp
         font-size: 32px
-    img
-      aspect-ratio: 8 / 5
-      object-fit: cover
-      margin-top: 16px
+    .cover
+      position: relative
+      width: 100%
+      &::before
+        content: ""
+        display: block
+        padding-top: calc(5 / 8 * 100%)
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        margin-top: 16px
 
 #about .container
   .text

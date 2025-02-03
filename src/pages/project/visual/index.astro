@@ -2,6 +2,7 @@
 import BrandBar from "@/components/BrandBar.astro"
 // import Button from '@components/Button.astro';
 import Form from "@/components/Form.astro"
+// import { Image } from "astro:assets"
 ---
 
 <html lang="ja">
@@ -10,7 +11,7 @@ import Form from "@/components/Form.astro"
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="icon" href="/public/images/favicon.ico" />
+    <link rel="icon" href="/images/favicon.ico" />
 
     <meta property="og:title" content="Visual | dgdgdgdg Solid Point" />
     <meta property="og:site_name" content="dgdgdgdg Solid Point" />
@@ -20,7 +21,7 @@ import Form from "@/components/Form.astro"
       content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://solid.dgdgdgdg.com/public/images/visual-cover.png" />
+    <meta property="og:image" content="https://solid.dgdgdgdg.com/images/visual-cover.png" />
 
     <title>Visual | dgdgdgdg Solid Point</title>
   </head>
@@ -31,7 +32,14 @@ import Form from "@/components/Form.astro"
         <a class="back" href="/"> Back to Top </a>
         <div class="container">
           <h1>Visual 🎨</h1>
-          {/* <img src="/public/images/xxx.png" alt="" class="cover" /> */}
+          <!-- <div class="cover">
+            <Image
+              src="/images/visual-cover.png"
+              alt="ビジュアルのカバー画像"
+              width={1920}
+              height={1080}
+            />
+          </div> -->
         </div>
       </section>
 
@@ -44,8 +52,13 @@ import Form from "@/components/Form.astro"
               <h3 class="name">紳士</h3>
               <p class="position">Illustrator</p>
               <div class="social-wrapper">
-                <a href="https://x.com/@shinshi00" target="_blank" rel="noopener noreferrer">
-                  <img src="/public/images/icon/x.svg" alt="" />
+                <a
+                  href="https://x.com/@shinshi00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="紳士 - X (Twitter)"
+                >
+                  <img src="/images/icon/x.svg" alt="" loading="lazy" />
                 </a>
               </div>
             </div>
@@ -54,29 +67,37 @@ import Form from "@/components/Form.astro"
               <h3 class="name">dgdgdgdg</h3>
               <p class="position">Designer</p>
               <div class="social-wrapper">
-                <a href="https://x.com/@dg4_design" target="_blank" rel="noopener noreferrer">
-                  <img src="/public/images/icon/x.svg" alt="" />
+                <a
+                  href="https://x.com/@dg4_design"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="dgdgdgdg - X (Twitter)"
+                >
+                  <img src="/images/icon/x.svg" alt="" loading="lazy" />
                 </a>
                 <a
                   href="https://misskey.design/@dg4_design"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="dgdgdgdg - Misskey"
                 >
-                  <img src="/public/images/icon/misskey.svg" alt="" />
+                  <img src="/images/icon/misskey.svg" alt="" loading="lazy" />
                 </a>
                 <a
                   href="https://www.instagram.com/dg4_design"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="dgdgdgdg - Instagram"
                 >
-                  <img src="/public/images/icon/instagram.svg" alt="" />
+                  <img src="/images/icon/instagram.svg" alt="" loading="lazy" />
                 </a>
                 <a
                   href="https://bsky.app/profile/dgdgdgdg.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="dgdgdgdg - Bluesky"
                 >
-                  <img src="/public/images/icon/bsky.svg" alt="" />
+                  <img src="/images/icon/bsky.svg" alt="" loading="lazy" />
                 </a>
               </div>
             </div>
