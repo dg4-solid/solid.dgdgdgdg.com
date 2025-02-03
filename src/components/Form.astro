@@ -235,7 +235,6 @@ const { googleFormLink, inputNames, autoCompletes } = destination
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault()
-      const formData = new FormData(form)
       const radioButtons = form.querySelectorAll(`input[name="${inputNames.select}"]`)
       const isAnyRadioSelected = Array.from(radioButtons).some(
         (radio) => radio instanceof HTMLInputElement && radio.checked
@@ -247,9 +246,10 @@ const { googleFormLink, inputNames, autoCompletes } = destination
       }
 
       try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
+        const formData = new FormData(form)
+        const response = await fetch('/form-proxy', {
+          method: 'POST',
+          body: formData
         })
 
         if (response.ok) {
