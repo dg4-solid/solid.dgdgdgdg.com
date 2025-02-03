@@ -20,6 +20,14 @@
         "astroSortOrder": "markup | scripts | styles",
         "voidElements": "always"
       }
+    },
+    {
+      "files": ["*.sass", "*.scss"],
+      "options": {
+        "parser": "sass",
+        "tabWidth": 2,
+        "singleQuote": false
+      }
     }
   ]
 }
