@@ -20,9 +20,14 @@ export async function onRequest(context) {
   }
 
   const formData = await request.formData();
+  const googleFormUrl = formData.get('_googleFormUrl');
+  
+  if (!googleFormUrl) {
+    return new Response('Google Form URL not provided', { status: 400 });
+  }
   
   // Google FormsへのPOSTリクエスト
-  const response = await fetch(request.url.replace('/form-proxy', ''), {
+  const response = await fetch(googleFormUrl.toString(), {
     method: 'POST',
     body: formData,
   });
