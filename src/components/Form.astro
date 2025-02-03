@@ -247,6 +247,7 @@ const { googleFormLink, inputNames, autoCompletes } = destination
 
       try {
         const formData = new FormData(form)
+        formData.append('_googleFormUrl', form.action)
         const response = await fetch('/form-proxy', {
           method: 'POST',
           body: formData
