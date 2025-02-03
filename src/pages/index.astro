@@ -1,0 +1,155 @@
+---
+import Header from '../components/Header.astro';
+import BrandBar from '../components/BrandBar.astro';
+import Form from '../components/Form.astro';
+
+const formDestination = {
+  googleFormLink: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe9M-6DYyXZuSSf8gm2S_JvT3yQDsMrHyJWekkBM4CM_QKqkg/formResponse",
+  inputNames: {
+    name: "entry.1803120711",
+    email: "entry.506070991",
+    select: "entry.174843426",
+    textarea: "entry.1457978395",
+  },
+  autoCompletes: [
+    {
+      name: "依頼",
+      message: "依頼内容, 趣旨・目的, 要望など",
+    },
+    {
+      name: "その他",
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+
+    <link rel="icon" href="/images/favicon.ico" />
+
+    <meta property="og:title" content="dgdgdgdg Solid Point" />
+    <meta property="og:site_name" content="dgdgdgdg Solid Point" />
+    <meta property="og:url" content="https://www.solid.dgdgdgdg.com" />
+    <meta property="og:description" content="想像の閃きが実体を得る凝固点 Solid Point | dgdgdgdgを始点とする共作チーム。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.solid.dgdgdgdg.com/images/ogp.jpg" />
+
+    <title>dgdgdgdg Solid Point</title>
+  </head>
+  <body>
+    <main>
+      <Header client:load />
+      <section id="firstview" class="shape">
+        <div class="bg-graphic"></div>
+        <span class="title">
+          <p class="slogan">想像の閃きが実体を得る凝固点</p>
+          <h1 id="logotype" />
+        </span>
+      </section>
+
+      <section id="about">
+        <div class="container overview">
+          <h2 class="title">About</h2>
+          <h3>Overview</h3>
+          <img src="/images/ogp.jpg" alt="" />
+          <p class="text">
+            dgdgdgdgを始点として、デザイン、映像、音楽
+            <br />
+            などの分野で新たな道を切り開きます。
+          </p>
+          <p class="text">
+            私たちは、共作による視点の拡張を通じて、
+            <br />
+            一人では成し得ないものづくりを追求します。
+          </p>
+        </div>
+
+        <div class="container meaning">
+          <h3>Meaning of Solid Point</h3>
+          <p class="note">Solid Pointは日本語で「凝固点（物質が液体から固体へと変化する瞬間）」</p>
+          <div class="items-wrapper">
+            <div class="item">
+              <img src="/images/icon-invention.svg" alt="" />
+              <p class="caption">アイデアが具体的な形や作品として凝固する、ものづくりの転換点を表す</p>
+            </div>
+            <div class="item">
+              <img src="/images/icon-balance.svg" alt="" />
+              <p class="caption">創造と実行、革新と安定、変化（液体から固体）と持続性の間のバランスをとる状態を表す</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project">
+        <div class="container">
+          <h2 class="title">Project</h2>
+          <div class="items-wrapper">
+            <a href="/project/radio" id="radio" class="item">
+              <h3 class="genre">Radio 📻</h3>
+              <div class="cover-image" />
+              <p class="description">
+                ゆるく雑談するラジオ
+                <br />
+                「ラジオのタイトルを入力」
+              </p>
+              <p class="partner">Partner: Tusk</p>
+              <p class="more">さらに詳しく</p>
+            </a>
+            <a href="/project/visual" id="visual" class="item">
+              <h3 class="genre">Visual 🎨</h3>
+              <div class="cover-image" />
+              <p class="description">デザインフェスタ等への出店を目指す</p>
+              <p class="partner">Partner: 紳士</p>
+              <p class="more">さらに詳しく</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contactForm">
+        <div class="container">
+          <h2 class="title">
+            Contact<span> to Solid Point</span>
+          </h2>
+          <Form destination={formDestination} />
+        </div>
+      </section>
+
+      <section id="endview" class="shape">
+        <div class="bg-graphic" />
+      </section>
+      <BrandBar />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/_reset.css";
+  @import "../styles/global.sass";
+  @import "../styles/style.sass";
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const header = document.querySelector('header');
+      if (header) {
+        const logo = header.querySelector('.logo');
+        if (logo) {
+          logo.classList.toggle('is-hidden', entry.isIntersecting);
+        }
+      }
+    },
+    { threshold: 0.166 }
+  );
+
+  const logotype = document.getElementById('logotype');
+  if (logotype) {
+    observer.observe(logotype);
+  }
+</script> 

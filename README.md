@@ -2,7 +2,7 @@
 
 dgdgdgdg Solid Point の Web サイトです。
 
-![ogp](https://www.solid.dgdgdgdg.com/images/ogp.jpg)
+![ogp](https://solid.dgdgdgdg.com/images/ogp.jpg)
 
 ![technology](https://img.shields.io/badge/-technology-333.svg?style=for-the-badge)
 
