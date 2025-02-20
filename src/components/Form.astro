@@ -17,7 +17,10 @@ interface Props {
 
 const { destination } = Astro.props
 const { googleFormLink, inputNames, autoCompletes } = destination
+const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY
 ---
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <form
   id="form"
@@ -69,6 +72,10 @@ const { googleFormLink, inputNames, autoCompletes } = destination
   <div class="formChunk">
     <input type="checkbox" id="agree" required />
     <label for="agree">入力内容を確認しました</label>
+  </div>
+
+  <div class="formChunk turnstile-wrapper">
+    <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
   </div>
 
   <div class="formChunk">
@@ -206,9 +213,25 @@ const { googleFormLink, inputNames, autoCompletes } = destination
   button[type="submit"].component-button
     cursor: pointer
     margin: 0
+
+  .turnstile-wrapper
+    margin-left: calc(unit(25) + unit(4))
+    @include media.sp
+      margin-left: 0
 </style>
 
 <script>
+  declare const turnstile: {
+    getResponse: () => string | null
+    render: (container: string | HTMLElement, options: {
+      sitekey: string
+      callback?: (token: string) => void
+      'expired-callback'?: () => void
+      'error-callback'?: (error: unknown) => void
+      theme?: 'light' | 'dark' | 'auto'
+    }) => void
+  }
+
   const form = document.getElementById("form")
   if (!(form instanceof HTMLFormElement)) throw new Error("Form not found")
 
@@ -250,9 +273,16 @@ const { googleFormLink, inputNames, autoCompletes } = destination
         return
       }
 
+      const token = turnstile.getResponse()
+      if (!token) {
+        alert("認証を完了してください")
+        return
+      }
+
       try {
         const formData = new FormData(form)
         formData.append('_googleFormUrl', form.action)
+        formData.append('cf-turnstile-response', token)
         const response = await fetch('/form-proxy', {
           method: 'POST',
           body: formData
