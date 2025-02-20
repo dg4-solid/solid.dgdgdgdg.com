@@ -40,6 +40,11 @@ import BrandBar from "@/components/BrandBar.astro"
 </header>
 
 <style lang="sass">
+  @use "../styles/config/color"
+  @use "../styles/config/size"
+  @use "../styles/config/media"
+  @use "../styles/config/functions" as *
+
   header
     width: 100%
     display: flex
@@ -51,30 +56,30 @@ import BrandBar from "@/components/BrandBar.astro"
       justify-content: space-between
       align-items: center
       top: 0
-      padding-left: 24px
+      padding-left: unit(4)
       z-index: 1000
 
-      @media (max-width: 640px)
-        padding-left: 12px
+      @include media.sp
+        padding-left: unit(2)
 
       .logo
-        width: 200px
-        height: 57px
+        width: unit(25)
+        height: unit(7)
         mask-image: url("/images/logotype.svg")
         mask-size: contain
         mask-repeat: no-repeat
         mask-position: center
-        background-color: #EBE6DD
+        background-color: color.$text-primary
         opacity: 1
         visibility: visible
         transition: all 0.2s
 
-        @media (max-width: 640px)
+        @include media.sp
           width: 150px
           height: 43px
 
         &:hover
-          background-color: #D40000
+          background-color: color.$text-accent
           transition: all 0.2s
 
         &.is-hidden
@@ -91,7 +96,7 @@ import BrandBar from "@/components/BrandBar.astro"
           opacity: 0
           transition: all 0.3s
 
-        @media (max-width: 640px)
+        @include media.sp
           display: none
 
         *
@@ -99,43 +104,43 @@ import BrandBar from "@/components/BrandBar.astro"
           font-weight: lighter
 
         a
-          color: #EBE6DD
+          color: color.$text-primary
           transition: all 0.2s
-          padding: 16px
+          padding: unit(2)
 
           &:hover
-            color: #D40000
+            color: color.$text-accent
             transition: all 0.2s
 
       .burger
-        width: 90px
-        height: 90px
+        width: size.$header-height-pc
+        height: size.$header-height-pc
         display: grid
         place-items: center
 
-        @media (max-width: 640px)
-          width: 70px
-          height: 70px
+        @include media.sp
+          width: size.$header-height-sp
+          height: size.$header-height-sp
           margin-left: auto
 
         &:hover rect
-          fill: #D40000
+          fill: color.$text-accent
 
         .line
-          width: 35px
-          height: 27px
+          width: unit(4.375)
+          height: unit(3.375)
           display: flex
           position: relative
 
-          @media (max-width: 640px)
-            width: 24px
-            height: 21px
+          @include media.sp
+            width: unit(3)
+            height: unit(2.625)
 
         rect
           width: 100%
-          height: 3px
+          height: unit(0.375)
           position: absolute
-          fill: #EBE6DD
+          fill: color.$text-primary
           transition: all 0.2s
 
           &:nth-of-type(1)
@@ -144,39 +149,39 @@ import BrandBar from "@/components/BrandBar.astro"
           &:nth-of-type(2)
             visibility: visible
             opacity: 1
-            y: 12px
+            y: unit(1.5)
 
-            @media (max-width: 640px)
-              y: 8px
+            @include media.sp
+              y: unit(1)
 
             &.is-open
               visibility: hidden
               opacity: 0
 
           &:nth-of-type(3)
-            y: 24px
+            y: unit(3)
 
-            @media (max-width: 640px)
-              y: 16px
+            @include media.sp
+              y: unit(2)
 
           &:nth-of-type(1).is-open, &:nth-of-type(3).is-open
-            y: 12px
+            y: unit(1.5)
 
-            @media (max-width: 640px)
-              y: 8px
+            @include media.sp
+              y: unit(1)
 
     .inside
       position: fixed
       width: 100%
       height: 100dvh
       top: -100dvh
-      padding-top: 90px
-      background-color: #0A0A0A
+      padding-top: size.$header-height-pc
+      background-color: color.$black-darker
       z-index: 999
       transition: all 0.5s
 
-      @media (max-width: 640px)
-        padding-top: 70px
+      @include media.sp
+        padding-top: size.$header-height-sp
 
       &.is-open
         top: 0
@@ -188,27 +193,27 @@ import BrandBar from "@/components/BrandBar.astro"
         flex-direction: column
         justify-content: center
         align-items: center
-        gap: 32px
+        gap: unit(5)
         transform: translateY(-112px)
 
-        @media (max-width: 640px)
-          gap: 16px
+        @include media.sp
+          gap: unit(2)
           transform: translateY(-160px)
 
         *
           font-family: "Monaspace Krypton Var"
           font-weight: normal
-          font-size: 64px
+          font-size: unit(8)
 
-          @media (max-width: 640px)
-            font-size: 40px
+          @include media.sp
+            font-size: unit(4)
 
         a
-          color: #EBE6DD
+          color: color.$text-primary
           transition: all 0.2s
 
           &:hover
-            color: #D40000
+            color: color.$text-accent
             transition: all 0.2s
 </style>
 

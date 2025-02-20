@@ -1,5 +1,7 @@
 @use "config/color"
 @use "config/media"
+@use "config/size"
+@use "config/functions" as *
 
 @font-face
   font-family: "Zen Medium"
@@ -22,20 +24,19 @@
   src: url("/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf")
 
 *
-  color: color.$white
-
+  color: color.$text-primary
   font-family: "Zen Medium", sans-serif
-  font-size: 16px
-  line-height: 1.6
+  font-size: unit(2)
+  line-height: 1.6em
 
   scroll-behavior: smooth
-  scroll-padding-top: 200px
+  scroll-padding-top: unit(25)
 
   @include media.tab
-    scroll-padding-top: 120px
+    scroll-padding-top: unit(15)
 
   @include media.sp
-    scroll-padding-top: 80px
+    scroll-padding-top: unit(8)
 
 body
   background-color: color.$black
@@ -47,62 +48,62 @@ iframe
 
 // container
 .container
-  width: 660px
-  max-width: 660px
+  width: size.$container-width
+  max-width: size.$container-width
   margin: 0 auto
-  margin-top: 256px
+  margin-top: unit(32)
 
   @include media.tab
     width: 100%
-    padding: 0 10px
-    margin-top: 200px
+    padding: 0 unit(2)
+    margin-top: unit(25)
 
   h2.title
     font-family: "Monaspace Krypton Var"
     font-weight: normal
-    font-size: 64px
+    font-size: unit(8)
     text-align: center
     @include media.sp
-      font-size: 32px
+      font-size: unit(4)
 
     & + *
-      margin-top: 56px
+      margin-top: unit(7)
       @include media.sp
-        margin-top: 32px
+        margin-top: unit(5)
 
   h3
     font-family: "Monaspace Krypton Var", "Zen Black"
     font-weight: bold
-    font-size: 32px
+    font-size: unit(4)
     @include media.sp
-      font-size: 24px
+      font-size: unit(2.5)
 
     & + *
-      margin-top: 40px
+      margin-top: unit(5)
       @include media.sp
-        margin-top: 24px
+        margin-top: unit(4)
 
 header
   .inside
     #brandBar
       position: absolute
-      bottom: 40px
+      bottom: unit(5)
       margin: 0
 
 .component-button
   display: block
   width: -moz-fit-content
   width: fit-content
-  height: 48px
+  height: unit(6)
   font-family: "Monaspace Krypton Var", "Zen Medium"
   font-weight: normal
-  line-height: 48px
-  padding: 0px 24px
-  border: 2px solid #ebe6dd
-  border-radius: 50px
+  line-height: unit(6)
+  padding: 0 unit(3)
+  border: unit(.25) solid color.$text-primary
+  border-radius: unit(5)
   margin: 0 auto
   transition: 0.2s
 
   &:hover
-    background-color: rgba(235, 230, 221, 0.1)
+    background-color: color.$overlay-light
     transition: 0.2s

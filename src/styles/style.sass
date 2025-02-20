@@ -1,6 +1,7 @@
 @use "config/color"
 @use "config/media"
 @use "config/size"
+@use "config/functions" as *
 
 .shape
   width: fit-content
@@ -47,16 +48,16 @@
 
     p.slogan
       text-align: right
-      padding-right: 34px
-      margin-bottom: -32px
+      padding-right: unit(5)
+      margin-bottom: calc(unit(5) * -1)
 
       @include media.tab
-        padding-right: 24px
-        margin-bottom: -24px
+        padding-right: unit(4)
+        margin-bottom: calc(unit(4) * -1)
 
       @include media.sp
         padding-right: 6vw
-        margin-bottom: -16px
+        margin-bottom: calc(unit(2) * -1)
 
     h1#logotype
       width: 582px
@@ -67,10 +68,10 @@
       mask-repeat: no-repeat
       mask-position: center
 
-      background-color: color.$white
+      background-color: color.$text-primary
 
       @include media.tab
-        width: 400px
+        width: unit(50)
 
       @include media.sp
         display: block
@@ -79,7 +80,7 @@
 #about
   .overview .text
     text-align: center
-    margin-top: 32px
+    margin-top: unit(5)
 
     @include media.sp
       text-align: left
@@ -99,32 +100,32 @@
       display: flex
       justify-content: space-between
 
-      margin-top: 56px
+      margin-top: unit(7)
 
       @include media.sp
         flex-direction: column
-        gap: 40px
-        padding: 0 32px
-        margin-top: 48px
+        gap: unit(5)
+        padding: 0 unit(5)
+        margin-top: unit(5)
 
       .item
-        width: 300px
+        width: unit(37.5)
         @include media.sp
           width: 100%
 
         img
           display: block
-          width: 200px
-          height: 200px
+          width: unit(25)
+          height: unit(25)
           margin: 0 auto
           @include media.sp
-            width: 128px
-            height: 128px
+            width: unit(16)
+            height: unit(16)
 
         .caption
-          margin-top: 32px
+          margin-top: unit(5)
           @include media.sp
-            margin-top: 16px
+            margin-top: unit(2)
 
 #project .items-wrapper
   display: flex
@@ -132,12 +133,12 @@
   @include media.sp
     width: fit-content
     flex-direction: column
-    gap: 56px
+    gap: unit(7)
     margin-right: auto
     margin-left: auto
 
   .item
-    width: 256px
+    width: unit(32)
     transition: 0.2s
 
     &.soon h3.genre, &.soon .description
@@ -151,13 +152,13 @@
       background-repeat: no-repeat
       background-color: color.$black-darker
 
-      margin-top: 16px
+      margin-top: unit(2)
 
     .description, .partner, .more
-      margin-top: 16px
+      margin-top: unit(2)
 
     .more
-      color: color.$red
+      color: color.$text-accent
       display: inline-block
       position: relative
       &::after
@@ -170,7 +171,7 @@
         right: -1em
         top: 0.45em
 
-        background-color: color.$red
+        background-color: color.$text-accent
         mask-image: url("/images/carret-triangle.svg")
         mask-size: contain
         mask-position: center
@@ -185,6 +186,6 @@
     // background-image: url("/images/xxx.png")
 
 #endview
-  margin-top: 296px
+  margin-top: unit(37)
   @include media.tab
-    margin-top: 200px
+    margin-top: unit(25)

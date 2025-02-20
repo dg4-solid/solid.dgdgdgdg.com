@@ -1,0 +1,6 @@
+// Base unit
+$base-unit: 8px
+
+// Unit function - 8pxベースのグリッドシステム
+@function unit($multiplier)
+  @return $base-unit * $multiplier

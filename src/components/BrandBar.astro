@@ -14,38 +14,42 @@ const currentYear = new Date().getFullYear()
 </div>
 
 <style lang="sass">
+  @use "../styles/config/media"
+  @use "../styles/config/functions" as *
+  @use "../styles/config/color"
+
   #brandBar
     display: flex
     justify-content: space-between
     align-items: center
     width: 100%
     padding: 0 7vw
-    margin: 80px 0
+    margin: unit(10) 0
 
-    @media (max-width: 640px)
+    @include media.sp
       flex-direction: column-reverse
-      gap: 16px
+      gap: unit(2)
       padding: 0 2.5vw
-      margin: 56px 0
+      margin: unit(7) 0
 
     .copyright
-      font-size: 12px
+      font-size: unit(1.5)
 
     .link-wrapper
       display: flex
-      gap: 40px
+      gap: unit(5)
 
-      @media (max-width: 640px)
+      @include media.sp
         flex-wrap: wrap
-        gap: 16px 40px
+        gap: unit(2) unit(5)
         justify-content: center
 
       a
-        color: #EBE6DD
+        color: color.$white
         text-decoration: underline
         transition: all 0.2s
 
         &:hover
-          color: #D40000
+          color: color.$red
           transition: all 0.2s
 </style>
