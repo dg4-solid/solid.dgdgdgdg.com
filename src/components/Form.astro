@@ -223,6 +223,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY
 <script>
   declare const turnstile: {
     getResponse: () => string | null
+    reset: () => void
     render: (container: string | HTMLElement, options: {
       sitekey: string
       callback?: (token: string) => void
@@ -240,6 +241,7 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY
   const autoCompleteMessage = document.querySelector<HTMLElement>(".js-auto-complete-message")
   const autoCompletes = JSON.parse(form.dataset.autocompletes || "[]")
   const inputNames = JSON.parse(form.dataset.inputNames || "{}")
+  const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]')
 
   if (nameText) {
     radioInputs.forEach((input) => {
@@ -279,6 +281,12 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY
         return
       }
 
+      // 送信ボタンを無効化してローディング状態にする
+      if (submitButton) {
+        submitButton.disabled = true
+        submitButton.textContent = "送信中..."
+      }
+
       try {
         const formData = new FormData(form)
         formData.append('_googleFormUrl', form.action)
@@ -291,12 +299,20 @@ const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY
         if (response.ok) {
           alert("送信が完了しました")
           form.reset()
+          turnstile.reset()
         } else {
           throw new Error("送信に失敗しました")
         }
       } catch (error) {
         alert("送信に失敗しました")
         console.error(error)
+        turnstile.reset()
+      } finally {
+        // 送信ボタンを元に戻す
+        if (submitButton) {
+          submitButton.disabled = false
+          submitButton.textContent = "送信"
+        }
       }
     })
   }
